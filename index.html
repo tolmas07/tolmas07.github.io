@@ -702,40 +702,46 @@
         });
 
         // =============================================
-        // PORTFOLIO — ADMIN PANEL & FILTERING
+        // FIREBASE SYNC — ОБЛАЧНАЯ СИНХРОНИЗАЦИЯ
         // =============================================
-        const ADMIN_PASSWORD = 'admin123'; // ИЗМЕНИТЕ ПАРОЛЬ!
 
-        // Дефолтные проекты (всегда отображаются)
-        const defaultProjects = [];
+        // Импортируем Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getDatabase, ref, onValue, set, child, get } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
+        // Ваша конфигурация
+        const firebaseConfig = {
+            apiKey: "AIzaSyB3o3l_ylhOYNaCkjh3bzbeM5OyF3Sd-Cg",
+            authDomain: "portfolio-db-10dc7.firebaseapp.com",
+            databaseURL: "https://portfolio-db-10dc7-default-rtdb.firebaseio.com",
+            projectId: "portfolio-db-10dc7",
+            storageBucket: "portfolio-db-10dc7.firebasestorage.app",
+            messagingSenderId: "978421850406",
+            appId: "1:978421850406:web:e68a87656b72c6e39021e7",
+            measurementId: "G-5350ZDGWD9"
+        };
+
+        // Инициализация
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const projectsRef = ref(db, 'projects');
+
+        const ADMIN_PASSWORD = 'admin123';
         let currentFilter = 'all';
         let isAdmin = sessionStorage.getItem('isAdmin') === 'true';
+        let allProjects = [];
 
-        function getCustomProjects() {
-            return JSON.parse(localStorage.getItem('portfolio_projects') || '[]');
-        }
-
-        function saveCustomProjects(projects) {
-            localStorage.setItem('portfolio_projects', JSON.stringify(projects));
-        }
-
-        function getAllProjects() {
-            return [...defaultProjects, ...getCustomProjects()];
-        }
-
-        // Рендер карточек
+        // Функция рендера (теперь работает с данными из облака)
         function renderPortfolio() {
             const grid = document.getElementById('portfolioGrid');
-            const projects = getAllProjects();
-            const filtered = currentFilter === 'all' ? projects : projects.filter(p => p.category === currentFilter);
+            const filtered = currentFilter === 'all' ? allProjects : allProjects.filter(p => p.category === currentFilter);
 
             grid.innerHTML = filtered.map(p => {
                 return `
                 <div class="new-project-card" data-category="${p.category}">
                     <div class="project-bg" style="background-image: url('${p.image}');"></div>
                     <div class="project-content">
-                        ${isAdmin && !p.isDefault ? `
+                        ${isAdmin ? `
                         <div class="admin-card-controls">
                             <button class="card-ctrl-btn edit" onclick="editProject('${p.id}')" title="Редактировать"><span class="material-symbols-outlined">edit</span></button>
                             <button class="card-ctrl-btn delete" onclick="deleteProject('${p.id}')" title="Удалить"><span class="material-symbols-outlined">delete</span></button>
@@ -750,6 +756,46 @@
             }).join('');
         }
 
+        // РЕАЛЬНОЕ ВРЕМЯ: Слушаем изменения в базе
+        onValue(projectsRef, (snapshot) => {
+            const data = snapshot.val();
+            allProjects = data ? Object.values(data) : [];
+            renderPortfolio();
+        });
+
+        // Сохранение в Firebase
+        async function saveToFirebase(project) {
+            await set(ref(db, 'projects/' + project.id), project);
+        }
+
+        // Удаление из Firebase
+        async function deleteFromFirebase(id) {
+            await set(ref(db, 'projects/' + id), null);
+        }
+
+        // Делаем функции глобальными, чтобы onclick в HTML их видел
+        window.editProject = (id) => {
+            const project = allProjects.find(p => p.id === id);
+            if (!project) return;
+            document.getElementById('editorTitle').textContent = 'Редактировать проект';
+            document.getElementById('projEditId').value = project.id;
+            document.getElementById('projTitle').value = project.title;
+            document.getElementById('projCategory').value = project.category;
+            document.getElementById('projCategoryLabel').value = project.categoryLabel;
+            document.getElementById('projImage').value = project.image;
+            document.getElementById('projectEditorModal').style.display = 'flex';
+        };
+
+        window.deleteProject = async (id) => {
+            if (confirm('Удалить этот проект навсегда из базы?')) {
+                await deleteFromFirebase(id);
+            }
+        };
+
+        window.closeModal = (id) => {
+            document.getElementById(id).style.display = 'none';
+        };
+
         // Фильтрация
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function (e) {
@@ -761,14 +807,9 @@
             });
         });
 
-        // Модальные окна
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-
-        // Админ-вход (Ctrl+Shift+Y)
+        // Админ-вход
         document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && e.shiftKey && (e.key === 'Y' || e.key === 'y' || e.key === 'Н' || e.key === 'н')) { // 'Н' это та же кнопка на русской раскладке
+            if (e.ctrlKey && e.shiftKey && (e.key === 'Y' || e.key === 'y' || e.key === 'Н' || e.key === 'н')) {
                 e.preventDefault();
                 if (isAdmin) return;
                 document.getElementById('adminLoginModal').style.display = 'flex';
@@ -776,13 +817,12 @@
             }
         });
 
-        // Логин
         document.getElementById('loginSubmitBtn').addEventListener('click', function () {
             const pwd = document.getElementById('adminPassword').value;
             if (pwd === ADMIN_PASSWORD) {
                 isAdmin = true;
                 sessionStorage.setItem('isAdmin', 'true');
-                closeModal('adminLoginModal');
+                window.closeModal('adminLoginModal');
                 document.getElementById('adminToolbar').style.display = 'flex';
                 document.getElementById('adminPassword').value = '';
                 document.getElementById('loginError').style.display = 'none';
@@ -792,11 +832,6 @@
             }
         });
 
-        document.getElementById('adminPassword').addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') document.getElementById('loginSubmitBtn').click();
-        });
-
-        // Выход
         document.getElementById('logoutBtn').addEventListener('click', function () {
             isAdmin = false;
             sessionStorage.removeItem('isAdmin');
@@ -804,7 +839,6 @@
             renderPortfolio();
         });
 
-        // Добавить проект
         document.getElementById('addProjectBtn').addEventListener('click', function () {
             document.getElementById('editorTitle').textContent = 'Добавить проект';
             document.getElementById('projectForm').reset();
@@ -812,8 +846,7 @@
             document.getElementById('projectEditorModal').style.display = 'flex';
         });
 
-        // Сохранить проект
-        document.getElementById('projectForm').addEventListener('submit', function (e) {
+        document.getElementById('projectForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const editId = document.getElementById('projEditId').value;
             const project = {
@@ -822,51 +855,19 @@
                 category: document.getElementById('projCategory').value,
                 categoryLabel: document.getElementById('projCategoryLabel').value || document.getElementById('projCategory').selectedOptions[0].text,
                 image: document.getElementById('projImage').value,
-                size: 'normal',
-                isDefault: false
+                timestamp: Date.now()
             };
 
-            const custom = getCustomProjects();
-            if (editId) {
-                const idx = custom.findIndex(p => p.id === editId);
-                if (idx !== -1) custom[idx] = project;
-            } else {
-                custom.push(project);
-            }
-            saveCustomProjects(custom);
-            closeModal('projectEditorModal');
-            renderPortfolio();
+            await saveToFirebase(project);
+            window.closeModal('projectEditorModal');
         });
 
-        // Редактировать проект
-        function editProject(id) {
-            const project = getCustomProjects().find(p => p.id === id);
-            if (!project) return;
-            document.getElementById('editorTitle').textContent = 'Редактировать проект';
-            document.getElementById('projEditId').value = project.id;
-            document.getElementById('projTitle').value = project.title;
-            document.getElementById('projCategory').value = project.category;
-            document.getElementById('projCategoryLabel').value = project.categoryLabel;
-            document.getElementById('projImage').value = project.image;
-            document.getElementById('projSize').value = project.size;
-            document.getElementById('projectEditorModal').style.display = 'flex';
-        }
-
-        // Удалить проект
-        function deleteProject(id) {
-            if (!confirm('Удалить этот проект?')) return;
-            const custom = getCustomProjects().filter(p => p.id !== id);
-            saveCustomProjects(custom);
-            renderPortfolio();
-        }
-
-        // Инициализация
+        // Инициализация тулбара
         if (isAdmin) {
             document.getElementById('adminToolbar').style.display = 'flex';
         }
-        renderPortfolio();
 
-        // Плавная прокрутка для header nav
+        // Плавная прокрутка
         document.querySelectorAll('header nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -874,7 +875,7 @@
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     window.scrollTo({
-                        top: targetSection.offsetTop - 80, // с учетом высоты хедера
+                        top: targetSection.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
