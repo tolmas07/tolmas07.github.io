@@ -85,6 +85,28 @@ header nav ul li a:hover {
     background: rgba(250, 3, 58, 0.05);
 }
 
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(250, 3, 58, 0.05);
+}
+
 /* Base Section */
 section {
     width: 100%;
@@ -2187,6 +2209,12 @@ section {
         /* Чуть уменьшил шрифт */
         padding: 0.3rem 0.4rem;
         /* Уменьшил поля кнопок */
+    }
+
+    .lang-btn {
+        font-size: 0.65rem !important;
+        padding: 0.3rem 0.5rem !important;
+        border-radius: 10px !important;
     }
 
     .nav-contact {

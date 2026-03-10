@@ -1,0 +1,286 @@
+const translations = {
+    ru: {
+        "nav-exp": "Опыт",
+        "nav-achieve": "Достижения",
+        "nav-projects": "Проекты",
+        "nav-contact": "Написать мне",
+        "hero-greet": "- Привет",
+        "hero-title": "Я <span class=\"red-text\">Толмас</span> Муртазоев",
+        "hero-desc": "Full-Stack Разработчик & UI Дизайнер. Я создаю цифровые продукты, которые объединяют в себе чистый код и продуманный дизайн. Давайте создадим что-то уникальное вместе.",
+        "hero-btn": "связаться со мной",
+        "skills-tag": "Возможности и эффективность",
+        "skills-title": "Технические навыки",
+        "skills-desc": "Объективный обзор моего опыта в цикле полностековой разработки и экосистеме креативного дизайна.",
+        "skills-web-title": "Веб-разработка",
+        "skills-web-subtitle": "Фреймворки и языки",
+        "skills-web-trend": "<span class=\"material-symbols-outlined\">trending_up</span> +12% в год",
+        "skills-mastery": "Общее мастерство",
+        "skills-design-title": "Дизайн-экосистема",
+        "skills-design-subtitle": "UI/UX и креативный пакет",
+        "skills-design-level": "<span class=\"material-symbols-outlined\">verified</span> Уровень эксперта",
+        "skills-design-val": "Высокая",
+        "skills-design-label": "Скорость творчества",
+        "skills-design-stat-val": "Высокая",
+        "skills-design-stat-label": "Скорость творчества",
+        "mini-front-title": "Фронтенд архитектура",
+        "mini-front-lvl": "Продвинутый уровень",
+        "mini-vis-title": "Визуальные системы",
+        "mini-vis-lvl": "Паттерны проектирования",
+        "mini-perf-title": "Производительность",
+        "mini-perf-lvl": "Оптимизация",
+        "metric-yoe": "ЛЕТ ОПЫТА",
+        "metric-proj": "ПРОЕКТОВ РЕАЛИЗОВАНО",
+        "metric-clients": "ДОВОЛЬНЫХ КЛИЕНТОВ",
+        "metric-awards": "ИНДУСТРИАЛЬНЫХ НАГРАД",
+        "achieve-tag": "Вехи пути",
+        "achieve-title": "Достижения и награды",
+        "achieve-desc": "Таймлайн профессионального признания, отраслевых сертификаций и ключевых этапов в веб-разработке и графическом дизайне.",
+        "achieve-start": "Начало карьерного пути",
+        "achieve-start-desc": "Старт профессиональной деятельности в качестве графического дизайнера, первые крупные коммерческие проекты и формирование визуального стиля.",
+        "achieve-award1": "Награда за мастерство в дизайне",
+        "achieve-award1-desc": "Присуждена Международной лигой дизайна за проект ребрендинга \"EcoSphere Global\".",
+        "achieve-cert1": "Сертификация и признание",
+        "achieve-cert1-desc": "Получение отраслевой сертификации и признание одного из лучших графических дизайнов года.",
+        "achieve-it": "Старт в IT: Web-разработчик",
+        "achieve-it-desc": "Переход в сферу фронтенд-разработки, объединение дизайнерского опыта с программной инженерией.",
+        "achieve-senior": "Senior Web Developer",
+        "achieve-senior-desc": "Сертификация от Google Cloud по специальности «Высокопроизводительная облачная архитектура».",
+        "achieve-awwwards": "Awwwards: Сайт дня",
+        "achieve-awwwards-title": "Awwwards: Сайт дня",
+        "achieve-awwwards-desc": "Признание за выдающийся интерактивный дизайн и фронтенд-реализацию платформы \"Nova Stream\".",
+        "achieve-grad": "Окончание БГУИР",
+        "achieve-grad-desc": "Специальность: Мобильный программист. Получение высшего технического образования.",
+        "achieve-date2": "Август 2023",
+        "achieve-google-title": "Senior Web Developer",
+        "achieve-google-desc": "Сертификация от Google Cloud по специальности «Высокопроизводительная облачная архитектура».",
+        "achieve-date3": "Октябрь 2023",
+        "achieve-date4": "Июнь 2026",
+        "achieve-bsuir-title": "Окончание БГУИР",
+        "achieve-bsuir-desc": "Специальность: Мобильный программист. Получение высшего технического образования.",
+        "cert-title": "Профессиональные сертификаты",
+        "cert-aws-title": "AWS Solutions Architect",
+        "cert-aws-desc": "Проектирование распределенных систем и внедрении масштабируемой облачной инфраструктуры.",
+        "cert-meta-title": "Meta Frontend Professional",
+        "cert-meta-desc": "Углубленная специализация на React.js, паттернах JavaScript и оптимизации производительности.",
+        "cert-uiux-title": "UI/UX Specialist",
+        "cert-uiux-desc": "Методологии дизайна, ориентированного на пользователя, прототипирование и визуальные принципы.",
+        "port-tag": "Мои последние работы",
+        "port-title": "Создаю цифровой <span class=\"red-text\">опыт</span> и визуальную идентичность.",
+        "port-desc": "Отобранные проекты по full-stack разработке и UI-дизайну, решающие реальные бизнес-задачи.",
+        "admin-mode": "<span class=\"material-symbols-outlined\">shield_person</span> Режим администратора",
+        "admin-add": "<span class=\"material-symbols-outlined\">add</span> Добавить проект",
+        "admin-logout": "<span class=\"material-symbols-outlined\">logout</span> Выйти",
+        "filter-all": "Все проекты",
+        "filter-web": "Веб-разработка",
+        "filter-design": "UI/UX Дизайн",
+        "filter-branding": "Брендинг",
+        "filter-ecomm": "E-Commerce",
+        "filter-graphic": "Графика",
+        "admin-login-title": "Вход для администратора",
+        "admin-login-desc": "Введите пароль для доступа к управлению портфолио.",
+        "admin-login-err": "Неверный пароль",
+        "admin-login-btn": "Войти <span class=\"material-symbols-outlined\">arrow_forward</span>",
+        "modal-add-title": "Добавить проект",
+        "modal-name": "Название проекта",
+        "modal-cat": "Категория",
+        "modal-cat-web": "Веб-разработка",
+        "modal-cat-design": "UI/UX Дизайн",
+        "modal-cat-brand": "Брендинг",
+        "modal-cat-ecomm": "E-Commerce",
+        "modal-cat-graph": "Графический дизайн",
+        "modal-link": "Ссылка на изображения (URL, через запятую)",
+        "modal-cat-label": "Текст категории (карточка)",
+        "modal-save": "Сохранить <span class=\"material-symbols-outlined\">save</span>",
+        "contact-tag": "<span class=\"material-symbols-outlined\">alternate_email</span> Доступен для фриланса",
+        "contact-title": "Давайте создадим что-то <span class=\"red-text\">необычайное</span> вместе.",
+        "contact-desc": "В данный момент я открыт для новых предложений. Если у вас есть вопрос или вы просто хотите поздороваться, я сделаю все возможное, чтобы ответить вам!",
+        "contact-email-label": "Напишите мне на",
+        "contact-loc-label": "Местоположение",
+        "contact-loc": "Минск, Беларусь",
+        "contact-social-label": "Социальные сети",
+        "form-name": "Ваше имя",
+        "form-email": "Электронная почта",
+        "form-subj": "Тема",
+        "subj-1": "Проект графического дизайна",
+        "subj-2": "Веб-разработка",
+        "subj-3": "Просто поздороваться",
+        "subj-4": "Другое",
+        "form-msg": "Сообщение",
+        "form-send": "Отправить сообщение <span class=\"material-symbols-outlined\">send</span>",
+        "clients-proof": "Более 100 довольных клиентов",
+        "footer-copy": "© 2026 Толмас Муртазоев. Все права защищены."
+    },
+    en: {
+        "nav-exp": "Experience",
+        "nav-achieve": "Achievements",
+        "nav-projects": "Projects",
+        "nav-contact": "Contact me",
+        "hero-greet": "- Hello",
+        "hero-title": "I'm <span class=\"red-text\">Tolmas</span> Murtazoev",
+        "hero-desc": "Full-Stack Developer & UI Designer. I build digital products that combine clean code and thoughtful design. Let's create something unique together.",
+        "hero-btn": "contact me",
+        "skills-tag": "Capabilities & Efficiency",
+        "skills-title": "Technical Skills",
+        "skills-desc": "An objective overview of my experience in the full-stack development cycle and creative design ecosystem.",
+        "skills-web-title": "Web Development",
+        "skills-web-subtitle": "Frameworks & Languages",
+        "skills-web-trend": "<span class=\"material-symbols-outlined\">trending_up</span> +12% per year",
+        "skills-mastery": "Overall Mastery",
+        "skills-design-title": "Design Ecosystem",
+        "skills-design-subtitle": "UI/UX & Creative Suite",
+        "skills-design-level": "<span class=\"material-symbols-outlined\">verified</span> Expert Level",
+        "skills-design-val": "High",
+        "skills-design-label": "Creative Speed",
+        "skills-design-stat-val": "High",
+        "skills-design-stat-label": "Creative Speed",
+        "mini-front-title": "Frontend Architecture",
+        "mini-front-lvl": "Advanced Level",
+        "mini-vis-title": "Visual Systems",
+        "mini-vis-lvl": "Design Patterns",
+        "mini-perf-title": "Performance",
+        "mini-perf-lvl": "Optimization",
+        "metric-yoe": "YEARS OF EXPERIENCE",
+        "metric-proj": "PROJECTS COMPLETED",
+        "metric-clients": "SATISFIED CLIENTS",
+        "metric-awards": "INDUSTRY AWARDS",
+        "achieve-tag": "Milestones",
+        "achieve-title": "Achievements & Awards",
+        "achieve-desc": "Timeline of professional recognition, industry certifications, and key milestones in web development and graphic design.",
+        "achieve-start": "Career Start",
+        "achieve-start-desc": "Started professional career as a graphic designer, first major commercial projects, and forming a visual style.",
+        "achieve-award1": "Design Excellence Award",
+        "achieve-award1-desc": "Awarded by the International Design League for the \"EcoSphere Global\" rebranding project.",
+        "achieve-cert1": "Certification & Recognition",
+        "achieve-cert1-desc": "Received industry certification and recognition for one of the best graphic designs of the year.",
+        "achieve-it": "IT Start: Web Developer",
+        "achieve-it-desc": "Transition to frontend development, combining design experience with software engineering.",
+        "achieve-senior": "Senior Web Developer",
+        "achieve-senior-desc": "Google Cloud Certification in \"High Performance Cloud Architecture\".",
+        "achieve-awwwards": "Awwwards: Site of the Day",
+        "achieve-awwwards-title": "Awwwards: Site of the Day",
+        "achieve-awwwards-desc": "Recognition for outstanding interactive design and frontend implementation of the \"Nova Stream\" platform.",
+        "achieve-grad": "Graduation from BSUIR",
+        "achieve-grad-desc": "Specialty: Mobile Developer. Received higher technical education.",
+        "achieve-date2": "August 2023",
+        "achieve-google-title": "Senior Web Developer",
+        "achieve-google-desc": "Google Cloud Certification in \"High Performance Cloud Architecture\".",
+        "achieve-date3": "October 2023",
+        "achieve-date4": "June 2026",
+        "achieve-bsuir-title": "Graduation from BSUIR",
+        "achieve-bsuir-desc": "Specialty: Mobile Developer. Received higher technical education.",
+        "cert-title": "Professional Certificates",
+        "cert-aws-title": "AWS Solutions Architect",
+        "cert-aws-desc": "Designing distributed systems and implementing scalable cloud infrastructure.",
+        "cert-meta-title": "Meta Frontend Professional",
+        "cert-meta-desc": "In-depth specialization in React.js, JavaScript patterns, and performance optimization.",
+        "cert-uiux-title": "UI/UX Specialist",
+        "cert-uiux-desc": "User-centered design methodologies, prototyping, and visual principles.",
+        "port-tag": "My Recent Work",
+        "port-title": "Crafting digital <span class=\"red-text\">experiences</span> & identity.",
+        "port-desc": "Selected full-stack and UI design projects solving real business problems.",
+        "admin-mode": "<span class=\"material-symbols-outlined\">shield_person</span> Admin Mode",
+        "admin-add": "<span class=\"material-symbols-outlined\">add</span> Add Project",
+        "admin-logout": "<span class=\"material-symbols-outlined\">logout</span> Logout",
+        "filter-all": "All Projects",
+        "filter-web": "Web Development",
+        "filter-design": "UI/UX Design",
+        "filter-branding": "Branding",
+        "filter-ecomm": "E-Commerce",
+        "filter-graphic": "Graphics",
+        "admin-login-title": "Admin Login",
+        "admin-login-desc": "Enter password to access portfolio management.",
+        "admin-login-err": "Invalid password",
+        "admin-login-btn": "Login <span class=\"material-symbols-outlined\">arrow_forward</span>",
+        "modal-add-title": "Add Project",
+        "modal-name": "Project Name",
+        "modal-cat": "Category",
+        "modal-cat-web": "Web Development",
+        "modal-cat-design": "UI/UX Design",
+        "modal-cat-brand": "Branding",
+        "modal-cat-ecomm": "E-Commerce",
+        "modal-cat-graph": "Graphic Design",
+        "modal-link": "Image links (URL, comma separated)",
+        "modal-cat-label": "Category text (card)",
+        "modal-save": "Save <span class=\"material-symbols-outlined\">save</span>",
+        "contact-tag": "<span class=\"material-symbols-outlined\">alternate_email</span> Available for freelance",
+        "contact-title": "Let's create something <span class=\"red-text\">extraordinary</span> together.",
+        "contact-desc": "I am currently open to new opportunities. If you have a question or just want to say hi, I'll do my best to get back to you!",
+        "contact-email-label": "Email me at",
+        "contact-loc-label": "Location",
+        "contact-loc": "Minsk, Belarus",
+        "contact-social-label": "Social Networks",
+        "form-name": "Your Name",
+        "form-email": "Email Address",
+        "form-subj": "Subject",
+        "subj-1": "Graphic Design Project",
+        "subj-2": "Web Development",
+        "subj-3": "Just to say hi",
+        "subj-4": "Other",
+        "form-msg": "Message",
+        "form-send": "Send Message <span class=\"material-symbols-outlined\">send</span>",
+        "clients-proof": "Over 100 satisfied clients",
+        "footer-copy": "© 2026 Tolmas Murtazoev. All rights reserved."
+    }
+};
+
+const placeholders = {
+    ru: {
+        "admin-pwd": "Пароль",
+        "modal-proj-name": "Финтех Аналитика",
+        "modal-proj-url": "https://example.com/img1.jpg, https://example.com/img2.jpg",
+        "modal-proj-cat": "Веб-приложение",
+        "form-name": "Иван Иванов",
+        "form-email": "ivan@example.com",
+        "form-msg": "Расскажите о вашей идее..."
+    },
+    en: {
+        "admin-pwd": "Password",
+        "modal-proj-name": "Fintech Analytics",
+        "modal-proj-url": "https://example.com/img1.jpg, https://example.com/img2.jpg",
+        "modal-proj-cat": "Web Application",
+        "form-name": "John Doe",
+        "form-email": "john@example.com",
+        "form-msg": "Tell me about your idea..."
+    }
+};
+
+let currentLang = localStorage.getItem('siteLang') || 'ru';
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    document.documentElement.lang = lang;
+
+    // Update standard text
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (placeholders[lang][key]) {
+            el.placeholder = placeholders[lang][key];
+        }
+    });
+
+    // Update the button appearance
+    const btn = document.getElementById('langToggle');
+    if (btn) {
+        btn.textContent = lang.toUpperCase();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(currentLang);
+
+    const btn = document.getElementById('langToggle');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            setLanguage(currentLang === 'ru' ? 'en' : 'ru');
+        });
+    }
+});

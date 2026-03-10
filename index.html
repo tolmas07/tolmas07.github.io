@@ -34,17 +34,18 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="5u6jbwaQdCfqizhgD_edO7kRr9rOVQYfF1VgNux6nBk" />
-
+    <script src="translations.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#section2">Опыт</a></li>
-                <li><a href="#achievements">Достижения</a></li>
-                <li><a href="#portfolio">Проекты</a></li>
-                <li><a href="#contact" class="nav-contact">Написать мне</a></li>
+                <li><a href="#section2" data-i18n="nav-exp">Опыт</a></li>
+                <li><a href="#achievements" data-i18n="nav-achieve">Достижения</a></li>
+                <li><a href="#portfolio" data-i18n="nav-projects">Проекты</a></li>
+                <li><a href="#contact" class="nav-contact" data-i18n="nav-contact">Написать мне</a></li>
+                <li><button id="langToggle" class="lang-btn">EN</button></li>
             </ul>
         </nav>
     </header>
@@ -52,11 +53,12 @@
     <main>
         <section id="section1">
             <div class="content">
-                <h2 class="h2">- Привет</h2>
-                <h1 class="h1">Я <span class="red-text">Толмас</span> Муртазоев</h1>
-                <p class="bio">Full-Stack Разработчик & UI Дизайнер. Я создаю цифровые продукты, которые объединяют в
+                <h2 class="h2" data-i18n="hero-greet">- Привет</h2>
+                <h1 class="h1" data-i18n="hero-title">Я <span class="red-text">Толмас</span> Муртазоев</h1>
+                <p class="bio" data-i18n="hero-desc">Full-Stack Разработчик & UI Дизайнер. Я создаю цифровые продукты,
+                    которые объединяют в
                     себе чистый код и продуманный дизайн. Давайте создадим что-то уникальное вместе.</p>
-                <a href="mailto:tolmasofficial@gmail.com" class="button">связаться со мной</a>
+                <a href="mailto:tolmasofficial@gmail.com" class="button" data-i18n="hero-btn">связаться со мной</a>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/tolmas_prvt/" target="_blank" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.063 169.063" fill="currentColor">
@@ -97,9 +99,10 @@
             <div class="container">
                 <div class="section-header">
                     <div class="header-text">
-                        <span class="tag">Возможности и эффективность</span>
-                        <h2>Технические навыки</h2>
-                        <p>Объективный обзор моего опыта в цикле полностековой разработки и экосистеме креативного
+                        <span class="tag" data-i18n="skills-tag">Возможности и эффективность</span>
+                        <h2 data-i18n="skills-title">Технические навыки</h2>
+                        <p data-i18n="skills-desc">Объективный обзор моего опыта в цикле полностековой разработки и
+                            экосистеме креативного
                             дизайна.</p>
                     </div>
 
@@ -110,16 +113,16 @@
                     <div class="skill-card">
                         <div class="card-header">
                             <div>
-                                <h3>Веб-разработка</h3>
-                                <span class="subtitle">Фреймворки и языки</span>
+                                <h3 data-i18n="skills-web-title">Веб-разработка</h3>
+                                <span class="subtitle" data-i18n="skills-web-subtitle">Фреймворки и языки</span>
                             </div>
-                            <div class="badge status-up">
+                            <div class="badge status-up" data-i18n="skills-web-trend">
                                 <span class="material-symbols-outlined">trending_up</span> +12% в год
                             </div>
                         </div>
                         <div class="stat-row">
                             <span class="stat-value">89%</span>
-                            <span class="stat-label">Общее мастерство</span>
+                            <span class="stat-label" data-i18n="skills-mastery">Общее мастерство</span>
                         </div>
                         <div class="chart-bars">
                             <div class="bar-col">
@@ -157,16 +160,17 @@
                     <div class="skill-card">
                         <div class="card-header">
                             <div>
-                                <h3>Дизайн-экосистема</h3>
-                                <span class="subtitle">UI/UX и креативный пакет</span>
+                                <h3 data-i18n="skills-design-title">Дизайн-экосистема</h3>
+                                <span class="subtitle" data-i18n="skills-design-subtitle">UI/UX и креативный
+                                    пакет</span>
                             </div>
-                            <div class="badge status-expert">
+                            <div class="badge status-expert" data-i18n="skills-design-level">
                                 <span class="material-symbols-outlined">verified</span> Уровень эксперта
                             </div>
                         </div>
                         <div class="stat-row">
-                            <span class="stat-value">Высокая</span>
-                            <span class="stat-label">Скорость творчества</span>
+                            <span class="stat-value" data-i18n="skills-design-stat-val">Высокая</span>
+                            <span class="stat-label" data-i18n="skills-design-stat-label">Скорость творчества</span>
                         </div>
                         <div class="area-chart">
                             <svg viewBox="0 0 500 120" preserveAspectRatio="none">
@@ -201,51 +205,54 @@
                     <div class="mini-card">
                         <div class="mini-top">
                             <div class="icon-box"><span class="material-symbols-outlined">code</span></div>
-                            <h4>Фронтенд архитектура</h4>
+                            <h4 data-i18n="mini-front-title">Фронтенд архитектура</h4>
                         </div>
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 92%;"></div>
                         </div>
-                        <div class="mini-bottom"><span>Продвинутый уровень</span><span>92%</span></div>
+                        <div class="mini-bottom"><span data-i18n="mini-front-lvl">Продвинутый
+                                уровень</span><span>92%</span></div>
                     </div>
                     <div class="mini-card">
                         <div class="mini-top">
                             <div class="icon-box"><span class="material-symbols-outlined">brush</span></div>
-                            <h4>Визуальные системы</h4>
+                            <h4 data-i18n="mini-vis-title">Визуальные системы</h4>
                         </div>
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 88%;"></div>
                         </div>
-                        <div class="mini-bottom"><span>Паттерны проектирования</span><span>88%</span></div>
+                        <div class="mini-bottom"><span data-i18n="mini-vis-lvl">Паттерны
+                                проектирования</span><span>88%</span></div>
                     </div>
                     <div class="mini-card">
                         <div class="mini-top">
                             <div class="icon-box"><span class="material-symbols-outlined">speed</span></div>
-                            <h4>Производительность</h4>
+                            <h4 data-i18n="mini-perf-title">Производительность</h4>
                         </div>
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 96%;"></div>
                         </div>
-                        <div class="mini-bottom"><span>Оптимизация</span><span>96%</span></div>
+                        <div class="mini-bottom"><span data-i18n="mini-perf-lvl">Оптимизация</span><span>96%</span>
+                        </div>
                     </div>
                 </div>
 
                 <div id="metrics" class="metrics-footer">
                     <div class="metric">
                         <span class="m-num">4+</span>
-                        <span class="m-label">ЛЕТ ОПЫТА</span>
+                        <span class="m-label" data-i18n="metric-yoe">ЛЕТ ОПЫТА</span>
                     </div>
                     <div class="metric">
                         <span class="m-num">120+</span>
-                        <span class="m-label">ПРОЕКТОВ РЕАЛИЗОВАНО</span>
+                        <span class="m-label" data-i18n="metric-proj">ПРОЕКТОВ РЕАЛИЗОВАНО</span>
                     </div>
                     <div class="metric">
                         <span class="m-num">100+</span>
-                        <span class="m-label">ДОВОЛЬНЫХ КЛИЕНТОВ</span>
+                        <span class="m-label" data-i18n="metric-clients">ДОВОЛЬНЫХ КЛИЕНТОВ</span>
                     </div>
                     <div class="metric">
                         <span class="m-num">12</span>
-                        <span class="m-label">ИНДУСТРИАЛЬНЫХ НАГРАД</span>
+                        <span class="m-label" data-i18n="metric-awards">ИНДУСТРИАЛЬНЫХ НАГРАД</span>
                     </div>
                 </div>
             </div>
@@ -255,9 +262,10 @@
         <section id="achievements" class="timeline-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="tag">Вехи пути</span>
-                    <h2>Достижения и награды</h2>
-                    <p>Таймлайн профессионального признания, отраслевых сертификаций и ключевых этапов в веб-разработке
+                    <span class="tag" data-i18n="achieve-tag">Вехи пути</span>
+                    <h2 data-i18n="achieve-title">Достижения и награды</h2>
+                    <p data-i18n="achieve-desc">Таймлайн профессионального признания, отраслевых сертификаций и ключевых
+                        этапов в веб-разработке
                         и графическом дизайне.</p>
                 </div>
 
@@ -270,8 +278,9 @@
                         </div>
                         <div class="timeline-card">
                             <span class="year">2020</span>
-                            <h3>Начало карьерного пути</h3>
-                            <p>Старт профессиональной деятельности в качестве графического дизайнера, первые крупные
+                            <h3 data-i18n="achieve-start">Начало карьерного пути</h3>
+                            <p data-i18n="achieve-start-desc">Старт профессиональной деятельности в качестве
+                                графического дизайнера, первые крупные
                                 коммерческие проекты и формирование визуального стиля.</p>
                         </div>
                     </div>
@@ -282,8 +291,9 @@
                         </div>
                         <div class="timeline-card">
                             <span class="year">Май 2022</span>
-                            <h3>Награда за мастерство в дизайне</h3>
-                            <p>Присуждена Международной лигой дизайна за проект ребрендинга "EcoSphere Global".</p>
+                            <h3 data-i18n="achieve-award1">Награда за мастерство в дизайне</h3>
+                            <p data-i18n="achieve-award1-desc">Присуждена Международной лигой дизайна за проект
+                                ребрендинга "EcoSphere Global".</p>
                         </div>
                     </div>
 
@@ -293,8 +303,9 @@
                         </div>
                         <div class="timeline-card">
                             <span class="year">2022</span>
-                            <h3>Сертификация и признание</h3>
-                            <p>Получение отраслевой сертификации и признание одного из лучших графических дизайнов года.
+                            <h3 data-i18n="achieve-cert1">Сертификация и признание</h3>
+                            <p data-i18n="achieve-cert1-desc">Получение отраслевой сертификации и признание одного из
+                                лучших графических дизайнов года.
                             </p>
                         </div>
                     </div>
@@ -305,8 +316,9 @@
                         </div>
                         <div class="timeline-card">
                             <span class="year">Январь 2023</span>
-                            <h3>Старт в IT: Web-разработчик</h3>
-                            <p>Переход в сферу фронтенд-разработки, объединение дизайнерского опыта с программной
+                            <h3 data-i18n="achieve-it">Старт в IT: Web-разработчик</h3>
+                            <p data-i18n="achieve-it-desc">Переход в сферу фронтенд-разработки, объединение
+                                дизайнерского опыта с программной
                                 инженерией.</p>
                         </div>
                     </div>
@@ -316,9 +328,10 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </div>
                         <div class="timeline-card">
-                            <span class="year">Август 2023</span>
-                            <h3>Senior Web Developer</h3>
-                            <p>Сертификация от Google Cloud по специальности «Высокопроизводительная облачная
+                            <span class="year" data-i18n="achieve-date2">Август 2023</span>
+                            <h3 data-i18n="achieve-google-title">Senior Web Developer</h3>
+                            <p data-i18n="achieve-google-desc">Сертификация от Google Cloud по специальности
+                                «Высокопроизводительная облачная
                                 архитектура».</p>
                         </div>
                     </div>
@@ -328,9 +341,10 @@
                             <span class="material-symbols-outlined">trophy</span>
                         </div>
                         <div class="timeline-card">
-                            <span class="year">Октябрь 2023</span>
-                            <h3>Awwwards: Сайт дня</h3>
-                            <p>Признание за выдающийся интерактивный дизайн и фронтенд-реализацию платформы "Nova
+                            <span class="year" data-i18n="achieve-date3">Октябрь 2023</span>
+                            <h3 data-i18n="achieve-awwwards-title">Awwwards: Сайт дня</h3>
+                            <p data-i18n="achieve-awwwards-desc">Признание за выдающийся интерактивный дизайн и
+                                фронтенд-реализацию платформы "Nova
                                 Stream".</p>
                             <div class="tag-list">
                                 <span class="tag-item">Digital Design</span>
@@ -344,14 +358,15 @@
                             <span class="material-symbols-outlined">school</span>
                         </div>
                         <div class="timeline-card">
-                            <span class="year">Июнь 2026</span>
-                            <h3>Окончание БГУИР</h3>
-                            <p>Специальность: Мобильный программист. Получение высшего технического образования.</p>
+                            <span class="year" data-i18n="achieve-date4">Июнь 2026</span>
+                            <h3 data-i18n="achieve-bsuir-title">Окончание БГУИР</h3>
+                            <p data-i18n="achieve-bsuir-desc">Специальность: Мобильный программист. Получение высшего
+                                технического образования.</p>
                         </div>
                     </div>
                     <div class="mt-24">
                         <div class="certificates-header">
-                            <h2>Профессиональные сертификаты</h2>
+                            <h2 data-i18n="cert-title">Профессиональные сертификаты</h2>
                             <div class="line"></div>
                         </div>
 
@@ -360,8 +375,9 @@
                                 <div class="cert-icon">
                                     <span class="material-symbols-outlined">cloud</span>
                                 </div>
-                                <h4>AWS Solutions Architect</h4>
-                                <p>Проектирование распределенных систем и внедрении масштабируемой облачной
+                                <h4 data-i18n="cert-aws-title">AWS Solutions Architect</h4>
+                                <p data-i18n="cert-aws-desc">Проектирование распределенных систем и внедрении
+                                    масштабируемой облачной
                                     инфраструктуры.
                                 </p>
                             </div>
@@ -369,8 +385,9 @@
                                 <div class="cert-icon">
                                     <span class="material-symbols-outlined">code</span>
                                 </div>
-                                <h4>Meta Frontend Professional</h4>
-                                <p>Углубленная специализация на React.js, паттернах JavaScript и оптимизации
+                                <h4 data-i18n="cert-meta-title">Meta Frontend Professional</h4>
+                                <p data-i18n="cert-meta-desc">Углубленная специализация на React.js, паттернах
+                                    JavaScript и оптимизации
                                     производительности.
                                 </p>
                             </div>
@@ -378,8 +395,9 @@
                                 <div class="cert-icon">
                                     <span class="material-symbols-outlined">draw</span>
                                 </div>
-                                <h4>UI/UX Specialist</h4>
-                                <p>Методологии дизайна, ориентированного на пользователя, прототипирование и визуальные
+                                <h4 data-i18n="cert-uiux-title">UI/UX Specialist</h4>
+                                <p data-i18n="cert-uiux-desc">Методологии дизайна, ориентированного на пользователя,
+                                    прототипирование и визуальные
                                     принципы.</p>
                             </div>
                         </div>
@@ -392,10 +410,11 @@
         <section id="portfolio" class="portfolio-section">
             <div class="container">
                 <div class="portfolio-header">
-                    <span class="portfolio-tag">Мои последние работы</span>
+                    <span class="portfolio-tag" data-i18n="port-tag">Мои последние работы</span>
                     <div class="flex-row">
-                        <h2>Создаю цифровой <span class="red-text">опыт</span> и визуальную идентичность.</h2>
-                        <div class="side-note">
+                        <h2 data-i18n="port-title">Создаю цифровой <span class="red-text">опыт</span> и визуальную
+                            идентичность.</h2>
+                        <div class="side-note" data-i18n="port-desc">
                             Отобранные проекты по full-stack разработке и UI-дизайну, решающие реальные бизнес-задачи.
                         </div>
                     </div>
@@ -403,23 +422,24 @@
 
                 <!-- Admin Toolbar (hidden by default) -->
                 <div id="adminToolbar" class="admin-toolbar" style="display:none;">
-                    <span class="admin-badge"><span class="material-symbols-outlined">shield_person</span> Режим
+                    <span class="admin-badge" data-i18n="admin-mode"><span
+                            class="material-symbols-outlined">shield_person</span> Режим
                         администратора</span>
                     <div class="admin-actions">
-                        <button id="addProjectBtn" class="admin-btn add"><span
+                        <button id="addProjectBtn" class="admin-btn add" data-i18n="admin-add"><span
                                 class="material-symbols-outlined">add</span> Добавить проект</button>
-                        <button id="logoutBtn" class="admin-btn logout"><span
+                        <button id="logoutBtn" class="admin-btn logout" data-i18n="admin-logout"><span
                                 class="material-symbols-outlined">logout</span> Выйти</button>
                     </div>
                 </div>
 
                 <div class="filter-tabs">
-                    <a href="#" class="filter-tab active" data-category="all">Все проекты</a>
-                    <a href="#" class="filter-tab" data-category="web">Веб-разработка</a>
-                    <a href="#" class="filter-tab" data-category="design">UI/UX Дизайн</a>
-                    <a href="#" class="filter-tab" data-category="branding">Брендинг</a>
-                    <a href="#" class="filter-tab" data-category="ecommerce">E-Commerce</a>
-                    <a href="#" class="filter-tab" data-category="graphic">Графика</a>
+                    <a href="#" class="filter-tab active" data-category="all" data-i18n="filter-all">Все проекты</a>
+                    <a href="#" class="filter-tab" data-category="web" data-i18n="filter-web">Веб-разработка</a>
+                    <a href="#" class="filter-tab" data-category="design" data-i18n="filter-design">UI/UX Дизайн</a>
+                    <a href="#" class="filter-tab" data-category="branding" data-i18n="filter-branding">Брендинг</a>
+                    <a href="#" class="filter-tab" data-category="ecommerce" data-i18n="filter-ecomm">E-Commerce</a>
+                    <a href="#" class="filter-tab" data-category="graphic" data-i18n="filter-graphic">Графика</a>
                 </div>
 
                 <div class="portfolio-grid" id="portfolioGrid">
@@ -435,11 +455,13 @@
             <div class="modal-card modal-small">
                 <button class="modal-close" onclick="closeModal('adminLoginModal')">&times;</button>
                 <div class="modal-icon"><span class="material-symbols-outlined">lock</span></div>
-                <h3>Вход для администратора</h3>
-                <p>Введите пароль для доступа к управлению портфолио.</p>
-                <input type="password" id="adminPassword" placeholder="Пароль" class="modal-input">
-                <div id="loginError" class="form-status error" style="display:none;">Неверный пароль</div>
-                <button id="loginSubmitBtn" class="submit-btn" style="margin-top:15px;">
+                <h3 data-i18n="admin-login-title">Вход для администратора</h3>
+                <p data-i18n="admin-login-desc">Введите пароль для доступа к управлению портфолио.</p>
+                <input type="password" id="adminPassword" placeholder="Пароль" class="modal-input"
+                    data-i18n-placeholder="admin-pwd">
+                <div id="loginError" class="form-status error" style="display:none;" data-i18n="admin-login-err">
+                    Неверный пароль</div>
+                <button id="loginSubmitBtn" class="submit-btn" style="margin-top:15px;" data-i18n="admin-login-btn">
                     Войти <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
@@ -449,24 +471,29 @@
         <div id="projectEditorModal" class="modal-overlay" style="display:none;">
             <div class="modal-card">
                 <button class="modal-close" onclick="closeModal('projectEditorModal')">&times;</button>
-                <h3 id="editorTitle">Добавить проект</h3>
+                <h3 id="editorTitle" data-i18n="modal-add-title">Добавить проект</h3>
                 <form id="projectForm" class="contact-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Название проекта</label>
-                            <input type="text" id="projTitle" placeholder="Финтех Аналитика" required>
+                            <label data-i18n="modal-name">Название проекта</label>
+                            <input type="text" id="projTitle" placeholder="Финтех Аналитика" required
+                                data-i18n-placeholder="modal-proj-name">
                         </div>
                         <div class="form-group">
-                            <label>Категория</label>
+                            <label data-i18n="modal-cat">Категория</label>
                             <div class="checkbox-group" id="projCategory">
-                                <label class="checkbox-label"><input type="checkbox" value="web"> Веб-разработка</label>
-                                <label class="checkbox-label"><input type="checkbox" value="design"> UI/UX
-                                    Дизайн</label>
-                                <label class="checkbox-label"><input type="checkbox" value="branding"> Брендинг</label>
+                                <label class="checkbox-label"><input type="checkbox" value="web"> <span
+                                        data-i18n="modal-cat-web">Веб-разработка</span></label>
+                                <label class="checkbox-label"><input type="checkbox" value="design"> <span
+                                        data-i18n="modal-cat-design">UI/UX Дизайн</span></label>
+                                <label class="checkbox-label"><input type="checkbox" value="branding"> <span
+                                        data-i18n="modal-cat-brand">Брендинг</span></label>
                                 <label class="checkbox-label"><input type="checkbox" value="ecommerce">
-                                    E-Commerce</label>
-                                <label class="checkbox-label"><input type="checkbox" value="graphic"> Графический
-                                    дизайн</label>
+                                    <span data-i18n="modal-cat-ecomm">E-Commerce</span></label>
+                                <label class="checkbox-label"><input type="checkbox" value="graphic"> <span
+                                        data-i18n="modal-cat-graph">Графический
+                                        дизайн</span></label>
+                                дизайн</label>
                             </div>
                         </div>
                     </div>
@@ -494,12 +521,13 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <div class="contact-left">
-                    <div class="contact-badge">
+                    <div class="contact-badge" data-i18n="contact-tag">
                         <span class="material-symbols-outlined">alternate_email</span>
                         Доступен для фриланса
                     </div>
-                    <h2>Давайте создадим что-то <span class="red-text">необычайное</span> вместе.</h2>
-                    <p class="description">
+                    <h2 data-i18n="contact-title">Давайте создадим что-то <span class="red-text">необычайное</span>
+                        вместе.</h2>
+                    <p class="description" data-i18n="contact-desc">
                         В данный момент я открыт для новых предложений. Если у вас есть вопрос или вы просто хотите
                         поздороваться, я сделаю все возможное, чтобы ответить вам!
                     </p>
@@ -510,7 +538,7 @@
                                 <span class="material-symbols-outlined">mail</span>
                             </div>
                             <div class="contact-details">
-                                <p>Напишите мне на</p>
+                                <p data-i18n="contact-email-label">Напишите мне на</p>
                                 <span>tolmasofficial@gmail.com</span>
                             </div>
                         </div>
@@ -519,14 +547,14 @@
                                 <span class="material-symbols-outlined">location_on</span>
                             </div>
                             <div class="contact-details">
-                                <p>Местоположение</p>
-                                <span>Минск, Беларусь</span>
+                                <p data-i18n="contact-loc-label">Местоположение</p>
+                                <span data-i18n="contact-loc">Минск, Беларусь</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-social">
-                        <p class="social-label">Социальные сети</p>
+                        <p class="social-label" data-i18n="contact-social-label">Социальные сети</p>
                         <div class="social-btns">
                             <a href="https://www.instagram.com/tolmas_prvt/" target="_blank" class="social-circle"
                                 aria-label="Instagram">
@@ -564,31 +592,32 @@
                         <form class="contact-form" id="contactForm">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Ваше имя</label>
-                                    <input type="text" id="userName" placeholder="Иван Иванов" required>
+                                    <label data-i18n="form-name">Ваше имя</label>
+                                    <input type="text" id="userName" placeholder="Иван Иванов" required
+                                        data-i18n-placeholder="form-name">
                                 </div>
                                 <div class="form-group">
-                                    <label>Электронная почта</label>
-                                    <input type="email" id="userEmail" placeholder="ivan@example.com" required>
+                                    <label data-i18n="form-email">Электронная почта</label>
+                                    <input type="email" id="userEmail" placeholder="ivan@example.com" required
+                                        data-i18n-placeholder="form-email">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Тема</label>
+                                <label data-i18n="form-subj">Тема</label>
                                 <select id="userSubject">
-                                    <option>Проект графического дизайна</option>
-                                    <option>Веб-разработка</option>
-                                    <option>Просто поздороваться</option>
-                                    <option>Другое</option>
+                                    <option data-i18n="subj-1">Проект графического дизайна</option>
+                                    <option data-i18n="subj-2">Веб-разработка</option>
+                                    <option data-i18n="subj-3">Просто поздороваться</option>
+                                    <option data-i18n="subj-4">Другое</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Сообщение</label>
-                                <textarea rows="5" id="userMessage" placeholder="Расскажите о вашей идее..."
-                                    required></textarea>
+                                <label data-i18n="form-msg">Сообщение</label>
+                                <textarea rows="5" id="userMessage" placeholder="Расскажите о вашей идее..." required
+                                    data-i18n-placeholder="form-msg"></textarea>
                             </div>
-                            <button type="submit" class="submit-btn">
-                                Отправить сообщение
-                                <span class="material-symbols-outlined">send</span>
+                            <button type="submit" class="submit-btn" data-i18n="form-send">
+                                Отправить сообщение <span class="material-symbols-outlined">send</span>
                             </button>
                             <div id="formStatus" class="form-status" style="display:none;"></div>
                         </form>
@@ -602,7 +631,7 @@
                                 <img src="https://i.pinimg.com/736x/a2/95/8f/a2958fdcede0cc3268eb40f738e6fb36.jpg"
                                     alt="Довольный клиент 3" loading="lazy">
                             </div>
-                            <p class="proof-text">Более 100 довольных клиентов</p>
+                            <p class="proof-text" data-i18n="clients-proof">Более 100 довольных клиентов</p>
                         </div>
                     </div>
                 </div>
@@ -613,7 +642,7 @@
 
     <footer class="footer-bottom">
         <div class="container">
-            <p>© 2026 Толмас Муртазоев. Все права защищены.</p>
+            <p data-i18n="footer-copy">© 2026 Толмас Муртазоев. Все права защищены.</p>
         </div>
     </footer>
 
