@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="google7463e6ff29c607f5" />
-
     <!-- SEO Meta Tags -->
     <meta name="description"
         content="Толмас Муртазоев — Full-Stack Разработчик & UI Дизайнер. Профессиональная веб-разработка, UX/UI дизайн и создание цифровых продуктов.">
@@ -15,11 +13,17 @@
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tolmas07.github.io/">
     <meta property="og:title" content="Толмас Муртазоев | Portfolio">
     <meta property="og:description"
         content="Профессиональная веб-разработка и дизайн интерфейсов. Давайте создадим что-то уникальное.">
     <meta property="og:image"
-        content="https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-19/466669931_495570893529345_5839841808605417835_n.jpg">
+        content="https://tolmas07.github.io/images/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Толмас Муртазоев | Portfolio">
+    <meta name="twitter:description" content="Full-Stack Разработчик & UI Дизайнер">
     <meta name="yandex-verification" content="276cc79b5246dd44" />
     <!-- Favicon -->
     <link rel="canonical" href="https://tolmas07.github.io/" />
@@ -35,6 +39,7 @@
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="5u6jbwaQdCfqizhgD_edO7kRr9rOVQYfF1VgNux6nBk" />
     <script src="translations.js" defer></script>
+    <script src="config.js"></script>
 </head>
 
 <body>
@@ -70,7 +75,7 @@
                                 d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.05,2.04-3.22,4.88-3.22,7.76c0,2.9,1.17,5.73,3.22,7.78c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.17,7.78-3.22c2.05-2.05,3.22-4.88,3.22-7.78c0-2.89-1.17-5.72-3.22-7.76C135.661,29.421,132.821,28.251,129.921,28.251z" />
                         </svg>
                     </a>
-                    <a href="tolmasofficial@gmail.com" aria-label="Email">
+                    <a href="mailto:tolmasofficial@gmail.com" aria-label="Email">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                             <path
                                 d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
@@ -493,7 +498,6 @@
                                 <label class="checkbox-label"><input type="checkbox" value="graphic"> <span
                                         data-i18n="modal-cat-graph">Графический
                                         дизайн</span></label>
-                                дизайн</label>
                             </div>
                         </div>
                     </div>
@@ -679,8 +683,11 @@
         // 4. Найдите бота @userinfobot (или @getmyid_bot), напишите ему любое слово. Он пришлет ваш Id (набор цифр). Вставьте его в ВАШ_CHAT_ID.
         // 5. ОБЯЗАТЕЛЬНО найдите вашего созданного бота в поиске Telegram и нажмите "Запустить" (чтобы он мог вам писать).
 
-        const TELEGRAM_BOT_TOKEN = '8285107850:AAEjkLjBAO_0FyTSk9EUkBxV0Axs0_pws8g';
-        const TELEGRAM_CHAT_ID = '1039005229';
+        // ВНИМАНИЕ: Для безопасности токен и ID вынесены в отдельный файл config.js
+        // Создайте файл config.js с переменными TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID
+        // config.js добавлен в .gitignore и НЕ попадает в репозиторий
+        const TELEGRAM_BOT_TOKEN = window.TELEGRAM_BOT_TOKEN || '';
+        const TELEGRAM_CHAT_ID = window.TELEGRAM_CHAT_ID || '';
 
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
