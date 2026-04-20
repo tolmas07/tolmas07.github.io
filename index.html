@@ -58,13 +58,13 @@
     <main>
         <section id="section1">
             <div class="content">
-                <h2 class="h2" data-i18n="hero-greet">- Привет</h2>
-                <h1 class="h1" data-i18n="hero-title">Я <span class="red-text">Толмас</span> Муртазоев</h1>
-                <p class="bio" data-i18n="hero-desc">Full-Stack Разработчик & UI Дизайнер. Я создаю цифровые продукты,
+                <h2 class="h2 hero-enter" style="--hero-delay: 0.1s" data-i18n="hero-greet">- Привет</h2>
+                <h1 class="h1 hero-enter" style="--hero-delay: 0.25s" data-i18n="hero-title">Я <span class="red-text">Толмас</span> Муртазоев</h1>
+                <p class="bio hero-enter" style="--hero-delay: 0.4s" data-i18n="hero-desc">Full-Stack Разработчик & UI Дизайнер. Я создаю цифровые продукты,
                     которые объединяют в
                     себе чистый код и продуманный дизайн. Давайте создадим что-то уникальное вместе.</p>
-                <a href="mailto:tolmasofficial@gmail.com" class="button" data-i18n="hero-btn">связаться со мной</a>
-                <div class="social-icons">
+                <a href="mailto:tolmasofficial@gmail.com" class="button hero-enter" style="--hero-delay: 0.55s" data-i18n="hero-btn">связаться со мной</a>
+                <div class="social-icons hero-enter" style="--hero-delay: 0.7s">
                     <a href="https://www.instagram.com/tolmas_prvt/" target="_blank" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.063 169.063" fill="currentColor">
                             <path
@@ -89,7 +89,7 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-visuals">
+            <div class="hero-visuals hero-enter" style="--hero-delay: 0.3s">
                 <img class="fon"
                     src="images/hero-bg.svg"
                     alt="">
@@ -102,7 +102,7 @@
         <!-- Section 2: Technical Skills -->
         <section id="section2" class="skills-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="header-text">
                         <span class="tag" data-i18n="skills-tag">Возможности и эффективность</span>
                         <h2 data-i18n="skills-title">Технические навыки</h2>
@@ -113,7 +113,7 @@
 
                 </div>
 
-                <div class="main-skills-grid">
+                <div class="main-skills-grid stagger-children reveal">
                     <!-- Web Development Card -->
                     <div class="skill-card">
                         <div class="card-header">
@@ -206,7 +206,7 @@
                     </div>
                 </div>
 
-                <div class="mini-grid">
+                <div class="mini-grid stagger-children reveal">
                     <div class="mini-card">
                         <div class="mini-top">
                             <div class="icon-box"><span class="material-symbols-outlined">code</span></div>
@@ -242,7 +242,7 @@
                     </div>
                 </div>
 
-                <div id="metrics" class="metrics-footer">
+                <div id="metrics" class="metrics-footer reveal">
                     <div class="metric">
                         <span class="m-num">4+</span>
                         <span class="m-label" data-i18n="metric-yoe">ЛЕТ ОПЫТА</span>
@@ -266,12 +266,13 @@
         <!-- Section 3: Milestones (Achievements) -->
         <section id="achievements" class="timeline-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="tag" data-i18n="achieve-tag">Вехи пути</span>
-                    <h2 data-i18n="achieve-title">Достижения и награды</h2>
-                    <p data-i18n="achieve-desc">Таймлайн профессионального признания, отраслевых сертификаций и ключевых
-                        этапов в веб-разработке
-                        и графическом дизайне.</p>
+                <div class="section-header reveal">
+                    <div class="header-text">
+                        <h2 data-i18n="achieve-title">Достижения и награды</h2>
+                        <p data-i18n="achieve-desc">Таймлайн профессионального признания, отраслевых сертификаций и
+                            ключевых этапов в веб-разработке и графическом дизайне.</p>
+                        <span class="tag" style="margin-top: 15px;" data-i18n="achieve-tag">Вехи пути</span>
+                    </div>
                 </div>
 
                 <div class="timeline-container">
@@ -414,7 +415,7 @@
         <!-- Section 4: Portfolio -->
         <section id="portfolio" class="portfolio-section">
             <div class="container">
-                <div class="portfolio-header">
+                <div class="portfolio-header reveal">
                     <span class="portfolio-tag" data-i18n="port-tag">Мои последние работы</span>
                     <div class="flex-row">
                         <h2 data-i18n="port-title">Создаю цифровой <span class="red-text">опыт</span> и визуальную
@@ -438,7 +439,7 @@
                     </div>
                 </div>
 
-                <div class="filter-tabs">
+                <div class="filter-tabs reveal">
                     <a href="#" class="filter-tab active" data-category="all" data-i18n="filter-all">Все проекты</a>
                     <a href="#" class="filter-tab" data-category="web" data-i18n="filter-web">Веб-разработка</a>
                     <a href="#" class="filter-tab" data-category="design" data-i18n="filter-design">UI/UX Дизайн</a>
@@ -524,7 +525,7 @@
         <!-- Section 5: Contact -->
         <section id="contact" class="contact-section">
             <div class="container">
-                <div class="contact-left">
+                <div class="contact-left reveal-left">
                     <div class="contact-badge" data-i18n="contact-tag">
                         <span class="material-symbols-outlined">alternate_email</span>
                         Доступен для фриланса
@@ -591,7 +592,7 @@
                     </div>
                 </div>
 
-                <div class="contact-right">
+                <div class="contact-right reveal-right">
                     <div class="form-card">
                         <form class="contact-form" id="contactForm">
                             <div class="form-row">
@@ -651,44 +652,93 @@
     </footer>
 
     <script type="module">
-        // Инициализируем наблюдатель для анимаций при скролле
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const animationObserver = new IntersectionObserver((entries) => {
+        // ===== Universal Scroll Reveal System =====
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                } else {
-                    entry.target.classList.remove('animate');
+                    entry.target.classList.add('visible');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .hero-enter').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Timeline items — add reveal dynamically with stagger
+        document.querySelectorAll('.timeline-item').forEach((item, i) => {
+            item.classList.add('reveal');
+            item.style.transitionDelay = `${i * 0.12}s`;
+            revealObserver.observe(item);
+        });
+
+        // ===== Skills Section Animation Observer =====
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('animate', entry.isIntersecting);
+            });
+        }, { threshold: 0.15 });
 
         const skillsSection = document.querySelector('#section2');
-        if (skillsSection) {
-            animationObserver.observe(skillsSection);
+        if (skillsSection) skillsObserver.observe(skillsSection);
+
+        // ===== Counter Animation for Metrics =====
+        function animateCounter(el, target, suffix = '') {
+            const duration = 2000;
+            const start = performance.now();
+            const numTarget = parseInt(target);
+
+            function update(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(numTarget * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
         }
 
-        // =============================================
-        // ОТПРАВКА ЗАЯВОК В ТЕЛЕГРАМ (Надежный вариант для тестов на локальном ПК)
-        // =============================================
-        // ИНСТРУКЦИЯ:
-        // 1. Откройте Telegram и найдите бота @BotFather
-        // 2. Напишите ему /newbot и создайте своего бота (дайте ему имя).
-        // 3. Он пришлет вам токен. Вставьте его вместо текста ВАШ_ТОКЕН_ОТ_БОТА в кавычки.
-        // 4. Найдите бота @userinfobot (или @getmyid_bot), напишите ему любое слово. Он пришлет ваш Id (набор цифр). Вставьте его в ВАШ_CHAT_ID.
-        // 5. ОБЯЗАТЕЛЬНО найдите вашего созданного бота в поиске Telegram и нажмите "Запустить" (чтобы он мог вам писать).
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.m-num').forEach(num => {
+                        if (num.dataset.counted) return;
+                        num.dataset.counted = '1';
+                        const text = num.textContent.trim();
+                        const match = text.match(/^(\d+)(.*)$/);
+                        if (match) animateCounter(num, match[1], match[2]);
+                    });
+                    metricsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
 
-        // ВНИМАНИЕ: Для безопасности токен и ID вынесены в отдельный файл config.js
-        // Создайте файл config.js с переменными TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID
-        // config.js добавлен в .gitignore и НЕ попадает в репозиторий
+        const metricsEl = document.getElementById('metrics');
+        if (metricsEl) metricsObserver.observe(metricsEl);
+
+        // ===== Header Scroll Effect =====
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            header.classList.toggle('scrolled', scrollY > 80);
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        // ===== Smooth Navigation =====
+        document.querySelectorAll('header nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href')?.substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+        // ===== Telegram Contact Form =====
         const TELEGRAM_BOT_TOKEN = window.TELEGRAM_BOT_TOKEN || '';
         const TELEGRAM_CHAT_ID = window.TELEGRAM_CHAT_ID || '';
-
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
         const submitBtn = contactForm.querySelector('.submit-btn');
@@ -696,15 +746,11 @@
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Проверка, если вы забыли вставить ключи
-            if (TELEGRAM_BOT_TOKEN === 'ВАШ_ТОКЕН_ОТ_БОТА' || !TELEGRAM_BOT_TOKEN) {
-                formStatus.style.display = 'block';
-                formStatus.className = 'form-status error';
-                formStatus.textContent = 'Ошибка настройки: Вы не указали токен Telegram-бота в коде. Откройте index.html и вставьте токен.';
+            if (!TELEGRAM_BOT_TOKEN) {
+                showFormStatus('error', 'Ошибка настройки: токен Telegram-бота не указан.');
                 return;
             }
 
-            // Отключаем кнопку на время отправки
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Отправка... <span class="material-symbols-outlined">hourglass_empty</span>';
             submitBtn.disabled = true;
@@ -714,44 +760,37 @@
             const subject = document.getElementById('userSubject').value;
             const message = document.getElementById('userMessage').value;
 
-            // Красивое форматирование сообщения для Telegram
             const text = `📬 *Новая заявка из Портфолио!*\n\n*👤 Имя:* ${name}\n*📧 Email:* ${email}\n*📋 Тема:* ${subject}\n*💬 Сообщение:* ${message}`;
-
-            // URL для API Telegram
             const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
 
-            fetch(url, { method: 'GET' })
-                .then(response => response.json())
+            fetch(url)
+                .then(r => r.json())
                 .then(data => {
                     if (data.ok) {
-                        formStatus.style.display = 'block';
-                        formStatus.className = 'form-status success';
-                        formStatus.textContent = '✓ Заявка успешно отправлена! Проверьте свой Telegram.';
+                        showFormStatus('success', '✓ Заявка успешно отправлена!');
                         contactForm.reset();
-                        setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
                     } else {
-                        throw new Error('Telegram API Error');
+                        throw new Error('API Error');
                     }
-                }).catch((err) => {
-                    formStatus.style.display = 'block';
-                    formStatus.className = 'form-status error';
-                    formStatus.textContent = 'Ошибка отправки телеграм-сообщения. Проверьте соединение и введенные Bot Token и Chat ID.';
-                    setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
-                }).finally(() => {
+                })
+                .catch(() => showFormStatus('error', 'Ошибка отправки. Проверьте соединение.'))
+                .finally(() => {
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
                 });
         });
 
-        // =============================================
-        // FIREBASE SYNC — ОБЛАЧНАЯ СИНХРОНИЗАЦИЯ
-        // =============================================
+        function showFormStatus(type, text) {
+            formStatus.style.display = 'block';
+            formStatus.className = `form-status ${type}`;
+            formStatus.textContent = text;
+            setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
+        }
 
-        // Импортируем Firebase SDK
+        // ===== Firebase Sync =====
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getDatabase, ref, onValue, set, child, get } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+        import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
-        // Ваша конфигурация
         const firebaseConfig = {
             apiKey: "AIzaSyB3o3l_ylhOYNaCkjh3bzbeM5OyF3Sd-Cg",
             authDomain: "portfolio-db-10dc7.firebaseapp.com",
@@ -763,7 +802,6 @@
             measurementId: "G-5350ZDGWD9"
         };
 
-        // Инициализация
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const projectsRef = ref(db, 'projects');
@@ -772,54 +810,33 @@
         let isAdmin = sessionStorage.getItem('isAdmin') === 'true';
         let allProjects = [];
 
-        // Функция рендера (теперь работает с данными из облака)
         function renderPortfolio() {
             const grid = document.getElementById('portfolioGrid');
             const filtered = currentFilter === 'all'
                 ? allProjects
-                : allProjects.filter(p => p.categories && p.categories.includes(currentFilter));
+                : allProjects.filter(p => p.categories?.includes(currentFilter));
 
             grid.innerHTML = filtered.map(p => {
-                // Поддержка старых проектов, где была только 'category'
                 const catStr = p.categories ? p.categories.join(',') : (p.category || '');
+                const images = Array.isArray(p.image) ? p.image : (p.image ? [p.image] : []);
 
-                // Поддержка и одного фото (строка), и нескольких (массив)
-                let imageElements = '';
-                let images = [];
-                if (Array.isArray(p.image)) {
-                    images = p.image;
-                } else if (p.image) {
-                    images = [p.image];
-                }
-
-                if (images.length > 0) {
-                    // Страницы нужно располагать в правильном z-index, 
-                    // чтобы первая картинка была сверху, 
-                    // а последние под ней.
-                    imageElements = images.map((imgUrl, index) => {
+                const imageElements = images.length > 0
+                    ? images.map((imgUrl, index) => {
                         const zIndex = images.length - index;
                         return `<div class="book-page" style="background-image: url('${imgUrl}'); z-index: ${zIndex};"></div>`;
-                    }).join('');
-                } else {
-                    imageElements = `<div class="book-page" style="background-color: #2a2a2a; z-index: 1;"></div>`;
-                }
+                    }).join('')
+                    : `<div class="book-page" style="background-color: #2a2a2a; z-index: 1;"></div>`;
 
                 return `
                 <div class="new-project-card" data-category="${catStr}" onclick="this.classList.toggle('flipped-card')">
                     <div class="card-inner">
-                        <!-- Лицевая сторона: только картинка/слайд-шоу -->
                         <div class="card-front">
-                            <div class="project-slider">
-                                ${imageElements}
-                            </div>
+                            <div class="project-slider">${imageElements}</div>
                         </div>
-                        
-                        <!-- Обратная сторона: заголовок, категория, кнопки -->
                         <div class="card-back">
                             <div class="project-content">
                                 ${isAdmin ? `
                                 <div class="admin-card-controls" style="pointer-events: auto;">
-                                    <!-- stopPropagation чтобы клик по кнопке не переворачивал карточку снова -->
                                     <button class="card-ctrl-btn edit" onclick="event.stopPropagation(); editProject('${p.id}')" title="Редактировать"><span class="material-symbols-outlined">edit</span></button>
                                     <button class="card-ctrl-btn delete" onclick="event.stopPropagation(); deleteProject('${p.id}')" title="Удалить"><span class="material-symbols-outlined">delete</span></button>
                                 </div>` : ''}
@@ -834,30 +851,22 @@
                 `;
             }).join('');
 
-            // Инициализация обработчиков слайд-шоу после каждого рендера
             initSlideshows();
         }
 
-        // Логика слайд-шоу - эффект перелистывания книги (поддержка моб. устройств)
+        // Slideshow — book page flip effect
         function initSlideshows() {
             const cards = document.querySelectorAll('.new-project-card');
-            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.matchMedia("(pointer: coarse)").matches);
+            const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
             if (isTouchDevice) {
-                // Для мобильных устройств: запускаем анимацию когда карточка на экране
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            startSlideshow(entry.target);
-                        } else {
-                            stopSlideshow(entry.target);
-                        }
+                        entry.isIntersecting ? startSlideshow(entry.target) : stopSlideshow(entry.target);
                     });
-                }, { threshold: 0.6 }); // Срабатывает когда видно 60% карточки
-
+                }, { threshold: 0.6 });
                 cards.forEach(card => observer.observe(card));
             } else {
-                // Для ПК: по наведению мыши
                 cards.forEach(card => {
                     card.addEventListener('mouseenter', () => startSlideshow(card));
                     card.addEventListener('mouseleave', () => stopSlideshow(card));
@@ -865,21 +874,16 @@
             }
 
             function startSlideshow(card) {
-                if (card.dataset.slideInterval) return; // Уже запущен
-
+                if (card.dataset.slideInterval) return;
                 const pages = card.querySelectorAll('.book-page');
                 if (pages.length <= 1) return;
 
                 let currentPage = 0;
                 card.dataset.slideInterval = setInterval(() => {
-                    // Пауза, если карточка перевернута спиной (пользователь читает текст)
                     if (card.classList.contains('flipped-card')) return;
-
-                    // Переворачиваем текущую страницу
                     pages[currentPage].classList.add('flipped');
                     currentPage++;
 
-                    // Если дошли до конца (оставляя последнюю страницу)
                     if (currentPage >= pages.length - 1) {
                         setTimeout(() => {
                             if (!card.classList.contains('flipped-card')) {
@@ -892,23 +896,18 @@
             }
 
             function stopSlideshow(card) {
-                if (card.dataset.slideInterval) {
-                    clearInterval(card.dataset.slideInterval);
-                    delete card.dataset.slideInterval;
-                }
-                const pages = card.querySelectorAll('.book-page');
-                pages.forEach(p => p.classList.remove('flipped'));
+                clearInterval(card.dataset.slideInterval);
+                delete card.dataset.slideInterval;
+                card.querySelectorAll('.book-page').forEach(p => p.classList.remove('flipped'));
             }
         }
 
-        // РЕАЛЬНОЕ ВРЕМЯ: Слушаем изменения в базе
+        // ===== Firebase Realtime Listeners =====
         onValue(projectsRef, (snapshot) => {
-            const data = snapshot.val();
-            allProjects = data ? Object.values(data) : [];
+            allProjects = snapshot.val() ? Object.values(snapshot.val()) : [];
             renderPortfolio();
         });
 
-        // Сохранение в Firebase
         async function saveToFirebase(project) {
             await set(ref(db, 'projects/' + project.id), project);
         }
@@ -918,7 +917,6 @@
             await set(ref(db, 'projects/' + id), null);
         }
 
-        // Делаем функции глобальными, чтобы onclick в HTML их видел
         window.editProject = (id) => {
             const project = allProjects.find(p => p.id === id);
             if (!project) return;
@@ -926,21 +924,12 @@
             document.getElementById('projEditId').value = project.id;
             document.getElementById('projTitle').value = project.title;
 
-            // Заполнение чекбоксов
-            const checkboxes = document.querySelectorAll('#projCategory input[type="checkbox"]');
-            checkboxes.forEach(cb => {
+            document.querySelectorAll('#projCategory input[type="checkbox"]').forEach(cb => {
                 cb.checked = project.categories ? project.categories.includes(cb.value) : (project.category === cb.value);
             });
 
             document.getElementById('projCategoryLabel').value = project.categoryLabel || '';
-
-            // Преобразование массива картинок обратно в строку с запятыми для редактирования
-            if (Array.isArray(project.image)) {
-                document.getElementById('projImage').value = project.image.join(', ');
-            } else {
-                document.getElementById('projImage').value = project.image || '';
-            }
-
+            document.getElementById('projImage').value = Array.isArray(project.image) ? project.image.join(', ') : (project.image || '');
             document.getElementById('projectEditorModal').style.display = 'flex';
         };
 
@@ -954,7 +943,7 @@
             document.getElementById(id).style.display = 'none';
         };
 
-        // Фильтрация
+        // Filters
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -965,7 +954,7 @@
             });
         });
 
-        // Админ-вход
+        // Admin login shortcut (Ctrl+Shift+Y)
         document.addEventListener('keydown', function (e) {
             if (e.ctrlKey && e.shiftKey && (e.key === 'Y' || e.key === 'y' || e.key === 'Н' || e.key === 'н')) {
                 e.preventDefault();
@@ -977,14 +966,10 @@
 
         document.getElementById('loginSubmitBtn').addEventListener('click', async function () {
             const pwd = document.getElementById('adminPassword').value;
-
-            // Базовая защита: пароль не хранится в открытом виде, вместо него сверяется хэш SHA-256
             const msgBuffer = new TextEncoder().encode(pwd);
             const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-            // Хэш пароля "Samsungj5"
             const TARGET_HASH = "38ca06a931651c283fb472c1693f8560ddc33c14f4b22cea34f6528199a1cdd1";
 
             if (hashHex === TARGET_HASH) {
@@ -1021,55 +1006,30 @@
             const editId = document.getElementById('projEditId').value;
 
             const selectedCategories = [];
-            document.querySelectorAll('#projCategory input[type="checkbox"]:checked').forEach(cb => {
-                selectedCategories.push(cb.value);
-            });
+            document.querySelectorAll('#projCategory input[type="checkbox"]:checked').forEach(cb => selectedCategories.push(cb.value));
 
-            // Fallback for empty label
             let displayLabel = document.getElementById('projCategoryLabel').value;
             if (!displayLabel && selectedCategories.length > 0) {
                 const firstChecked = document.querySelector(`#projCategory input[value="${selectedCategories[0]}"]`);
                 displayLabel = firstChecked ? firstChecked.parentElement.textContent.trim() : '';
             }
 
-            // Преобразование строки введенных url-ов в массив
-            const imageInput = document.getElementById('projImage').value;
-            const imageArray = imageInput.split(',')
-                .map(url => url.trim())
-                .filter(url => url.length > 0);
+            const imageArray = document.getElementById('projImage').value.split(',').map(u => u.trim()).filter(Boolean);
 
-            const project = {
+            await saveToFirebase({
                 id: editId || 'p_' + Date.now(),
                 title: document.getElementById('projTitle').value,
                 categories: selectedCategories,
                 categoryLabel: displayLabel,
-                image: imageArray, // Сохраняем как массив
+                image: imageArray,
                 timestamp: Date.now()
-            };
-
-            await saveToFirebase(project);
+            });
             window.closeModal('projectEditorModal');
         });
 
-        // Инициализация тулбара
         if (isAdmin) {
             document.getElementById('adminToolbar').style.display = 'flex';
         }
-
-        // Плавная прокрутка
-        document.querySelectorAll('header nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 
