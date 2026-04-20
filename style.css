@@ -7,11 +7,105 @@
     --glass: rgba(255, 255, 255, 0.7);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== Scroll Reveal Animation System ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    will-change: opacity, transform;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    will-change: opacity, transform;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    will-change: opacity, transform;
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger delays for child elements */
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.5s; }
+.stagger-children.visible > *:nth-child(7) { transition-delay: 0.6s; }
+
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+.stagger-children.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero entrance animations */
+.hero-enter {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+    transition-delay: var(--hero-delay, 0s);
+}
+
+.hero-enter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header scroll state */
+header.scrolled {
+    top: 10px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+header {
+    transition: all 0.4s var(--ease-out-expo);
 }
 
 * {
     margin: 0;
-    /* ВАЖНО: маятниковый margin:auto ломает всю сетку, возвращаю 0 */
     padding: 0;
     box-sizing: border-box;
 }
@@ -110,16 +204,17 @@ header nav ul li a:hover {
 /* Base Section */
 section {
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 5%;
+    padding: 100px 5%;
     position: relative;
 }
 
 /* Section 1 - Hero */
 #section1 {
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -211,20 +306,16 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    /* Можно менять scale(1) на scale(1.5) и т.д. */
-    width: 700px !important;
-    /* Поменял на 600px для теста */
+    transform: translate(-50%, -50%);
+    width: 700px;
     height: auto;
     z-index: 1;
     opacity: 0.8;
-
 }
 
 .portret {
     position: relative;
     top: 50px;
-    /* ЗДЕСЬ МОЖНО ОПУСКАТЬ/ПОДНИМАТЬ ПОРТРЕТ */
     z-index: 2;
     width: 100%;
     max-width: 500px;
@@ -251,7 +342,7 @@ section {
 
 /* Skills Section Styles (Precision matched to Layout Image) */
 .skills-section {
-    background-color: #F0F4F8;
+    background-color: var(--bg-color);
     padding: 100px 5%;
 }
 
@@ -270,6 +361,10 @@ section {
 
 .section-header .header-text {
     max-width: 600px;
+}
+
+.section-header .header-text:only-child {
+    max-width: 100%;
 }
 
 .section-header .tag {
@@ -332,6 +427,12 @@ section {
     border-radius: 20px;
     padding: 45px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
 }
 
 .skill-card .card-header {
@@ -401,7 +502,6 @@ section {
     align-items: flex-end;
     justify-content: space-between;
     height: 220px;
-    /* Увеличил высоту, чтобы было место для цифр разной высоты */
     padding: 0 5px;
 }
 
@@ -412,7 +512,6 @@ section {
     justify-content: flex-end;
     width: 38px;
     height: 100%;
-    /* Колонка занимает всю высоту графика */
 }
 
 .bar {
@@ -423,8 +522,6 @@ section {
     flex-shrink: 0;
     transform-origin: bottom;
     opacity: 0;
-    /* Изначально скрыто */
-    /* ВАЖНО: не дает бару сжиматься, заставляя его выталкивать цифру вверх */
 }
 
 .skills-section.animate .bar {
@@ -636,6 +733,13 @@ section {
     border-radius: 22px;
     padding: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: var(--transition);
+}
+
+.mini-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+    border-color: rgba(255, 0, 51, 0.15);
 }
 
 .mini-top {
@@ -681,7 +785,6 @@ section {
     border-radius: 10px;
     transform-origin: left;
     transform: scaleX(0);
-    /* Изначально пусто */
 }
 
 .skills-section.animate .progress-bar {
@@ -710,12 +813,11 @@ section {
     color: #000;
 }
 
-/* Metrics Row (Footer) */
+/* Metrics Row */
 .metrics-footer {
     display: flex;
     justify-content: space-between;
     padding: 80px 0 20px;
-    border-top: 2px solid #E2E8F0;
     gap: 20px;
 }
 
@@ -743,8 +845,8 @@ section {
 /* Timeline Section Styles (Milestones) */
 .timeline-section,
 #achievements {
-    padding: 80px 5%;
-    background-color: #F0F4F8;
+    padding: 100px 5%;
+    background-color: var(--bg-color);
 }
 
 .timeline-section .container {
@@ -835,8 +937,9 @@ section {
 }
 
 .timeline-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
     border-color: rgba(255, 0, 51, 0.2);
+    transform: translateY(-4px);
 }
 
 .timeline-card .year {
@@ -881,7 +984,6 @@ section {
 .certificates-section {
     padding: 80px 5%;
     background-color: #F0F4F8;
-    border-top: 1px solid #E2E8F0;
 }
 
 .certificates-section .container {
@@ -927,7 +1029,8 @@ section {
 
 .cert-card:hover {
     border-color: rgba(255, 0, 51, 0.4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
 }
 
 .cert-icon {
@@ -966,7 +1069,6 @@ section {
     line-height: 1.6;
 }
 
-/* Update Responsive Styles */
 @media (max-width: 1024px) {
     .certificates-grid {
         grid-template-columns: 1fr;
@@ -975,9 +1077,7 @@ section {
     .milestones-header h2 {
         font-size: 2.5rem;
     }
-}
 
-@media (max-width: 1024px) {
     #section1 {
         flex-direction: column;
         text-align: center;
@@ -1051,9 +1151,7 @@ section {
     }
 }
 
-/* =============================================
-   PORTFOLIO SECTION
-   ============================================= */
+/* Portfolio Section */
 .portfolio-section {
     padding: 6rem 5%;
     background-color: var(--bg-color);
@@ -1309,10 +1407,6 @@ section {
     transform: translateX(8px);
 }
 
-/* =============================================
-   ADMIN PORTFOLIO SYSTEM
-   ============================================= */
-
 /* Admin Toolbar */
 .admin-toolbar {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -1341,7 +1435,6 @@ section {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    /* Добавил перенос чтобы влезло */
 }
 
 .admin-btn {
@@ -1834,11 +1927,10 @@ section {
     color: #94A3B8;
 }
 
-/* Footer Bottom Section (Replacing/Adding) */
+/* Footer */
 .footer-bottom {
     padding: 40px 5%;
     background: var(--bg-color);
-    border-top: 1px solid #E2E8F0;
 }
 
 .footer-bottom .container {
@@ -1871,10 +1963,6 @@ section {
 .footer-legal a:hover {
     color: var(--primary-color);
 }
-
-/* =============================================
-   MOBILE ADAPTATION (CLEAN & COMPLETE)
-   ============================================= */
 
 @media (max-width: 1024px) {
     header {
@@ -1933,7 +2021,6 @@ section {
     /* General Section Padding */
     section {
         padding: 60px 20px !important;
-        min-height: auto;
     }
 
     /* Header Navigation */
@@ -1941,20 +2028,16 @@ section {
         height: 50px;
         top: 10px;
         width: 90%;
-        /* Сделал еще чуть компактнее */
         border-radius: 15px;
     }
 
     header nav ul {
         gap: 2px;
-        /* Прижал кнопки друг к другу */
     }
 
     header nav ul li a {
         font-size: 0.65rem;
-        /* Чуть уменьшил шрифт */
         padding: 0.3rem 0.4rem;
-        /* Уменьшил поля кнопок */
     }
 
     .lang-btn {
@@ -1967,13 +2050,12 @@ section {
         padding: 4px 10px !important;
     }
 
-    /* Hero Section (#section1) */
     #section1 {
         flex-direction: column !important;
         padding-top: 10px !important;
-        /* Уменьшил в два раза */
         text-align: center !important;
         height: auto !important;
+        min-height: auto !important;
     }
 
     #section1 .content {
@@ -2035,7 +2117,6 @@ section {
         margin-bottom: 50px !important;
     }
 
-    /* Доп. навыки: убираем отступ и чиним анимацию */
     .mini-grid {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
@@ -2048,7 +2129,6 @@ section {
 
     .progress-bar {
         transform: scaleX(0);
-        /* Сбрасываем для анимации */
         transform-origin: left;
     }
 
@@ -2087,7 +2167,6 @@ section {
 
     .certificates-header .line {
         display: none !important;
-        /* Скрываем лишнюю линию на мобильных */
     }
 
     .certificates-grid {
@@ -2101,12 +2180,10 @@ section {
 
     .timeline-container {
         padding-left: 45px !important;
-        /* Уменьшенный отступ для маркеров */
     }
 
     .timeline-line {
         left: 9px !important;
-        /* Смещаем линию влево как просили */
     }
 
     .timeline-container .mt-24 {
@@ -2124,16 +2201,13 @@ section {
     .portfolio-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        /* Строго одна колонка */
         grid-auto-rows: auto !important;
-        /* Убираем фиксированную высоту, чтобы не было наложений */
         gap: 30px !important;
     }
 
     .new-project-card {
         width: 100% !important;
         aspect-ratio: 1 / 1 !important;
-        /* Сохраняем квадратную форму */
     }
 
     .project-card.tall,
@@ -2167,19 +2241,17 @@ section {
         text-align: center;
     }
 
-    /* Metrics footer: центрирование */
     .metrics-footer {
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
         gap: 50px !important;
         padding-top: 50px !important;
-        padding-bottom: 0px !important;
+        padding-bottom: 0 !important;
     }
 
     .m-num {
         font-size: 3.5rem !important;
-        /* Чуть меньше для мобилок */
     }
 
     .footer-bottom .container {
@@ -2202,7 +2274,6 @@ section {
 
     .certificates-header h2 {
         font-size: 1.5rem !important;
-        /* Еще меньше для совсем маленьких экранов */
     }
 
     .h1 {
