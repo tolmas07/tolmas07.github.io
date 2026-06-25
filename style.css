@@ -1193,10 +1193,9 @@ section {
     max-width: 600px;
 }
 
-.portfolio-header .side-note {
+.portfolio-header {
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.6);
-    max-width: 320px;
     border-left: 2px solid var(--primary-color);
     padding-left: 1rem;
     line-height: 1.6;
