@@ -87,7 +87,8 @@ const translations = {
         "clients-proof": "Более 100 довольных клиентов",
         "cv-title": "Скачать моё CV",
         "cv-desc": "Полное резюме с подробным описанием опыта, образования, навыков и проектов.",
-        "cv-download": "Скачать CV",
+        "cv-pdf": "Скачать PDF",
+        "cv-html": "Скачать HTML",
         "cv-view": "Открыть в браузере",
         "footer-copy": "© 2026 Толмас Муртазоев. Все права защищены."
     },
@@ -179,7 +180,8 @@ const translations = {
         "clients-proof": "Over 100 satisfied clients",
         "cv-title": "Download my CV",
         "cv-desc": "Full resume with detailed experience, education, skills, and projects.",
-        "cv-download": "Download CV",
+        "cv-pdf": "Download PDF",
+        "cv-html": "Download HTML",
         "cv-view": "Open in browser",
         "footer-copy": "© 2026 Tolmas Murtazoev. All rights reserved."
     }

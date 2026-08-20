@@ -2466,6 +2466,18 @@ section {
     color: var(--primary-color);
 }
 
+.cv-btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.cv-btn-ghost:hover {
+    color: var(--text-color);
+    border-color: rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
 /* Security: disable text selection on non-interactive elements */
 body {
     -webkit-user-select: none;
