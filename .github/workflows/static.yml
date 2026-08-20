@@ -1,49 +1,74 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Deploy static content to Pages (main + test-improvements)
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: ["main", "test-improvements"]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
-      - name: Generate config.js from secrets
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout test-improvements
+        uses: actions/checkout@v4
+        with:
+          ref: test-improvements
+          path: test
+        continue-on-error: true
+
+      - name: Generate config.js from secrets (main)
+        working-directory: main
         run: |
           cat > config.js << 'EOF'
           window.TELEGRAM_BOT_TOKEN = '${{ secrets.TELEGRAM_BOT_TOKEN }}';
           window.TELEGRAM_CHAT_ID = '${{ secrets.TELEGRAM_CHAT_ID }}';
           EOF
+
+      - name: Generate config.js from secrets (test)
+        if: hashFiles('test/index.html') != ''
+        working-directory: test
+        run: |
+          cat > config.js << 'EOF'
+          window.TELEGRAM_BOT_TOKEN = '${{ secrets.TELEGRAM_BOT_TOKEN }}';
+          window.TELEGRAM_CHAT_ID = '${{ secrets.TELEGRAM_CHAT_ID }}';
+          EOF
+
+      - name: Assemble site
+        run: |
+          mkdir -p site
+          cp -r main/* site/
+          if [ -d "test" ] && [ -f "test/index.html" ]; then
+            mkdir -p site/test
+            cp -r test/* site/test/
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
