@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Толмасбек Муртазоев — CV & Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Print Styles for flawless A4 PDF export */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+            body {
+                background: white !important;
+                color: #111827 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-shadow-none {
+                box-shadow: none !important;
+            }
+            .print-border-none {
+                border: none !important;
+            }
+            .page-break-inside-avoid {
+                break-inside: avoid;
+            }
+            .print-text-dark {
+                color: #0f172a !important;
+            }
+        }
+
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+
+    <!-- Top Action Bar (Hidden in PDF export) -->
+    <div class="max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 no-print bg-slate-800/90 backdrop-blur border border-slate-700 p-4 rounded-xl shadow-xl">
+        <div class="flex items-center space-x-3">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <span class="text-sm font-medium text-slate-200">Интерактивный Canvas-режим / Готово к печати</span>
+        </div>
+        
+        <div class="flex items-center gap-3">
+            <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white font-medium px-4 py-2 rounded-lg text-sm flex items-center gap-2 transition shadow-lg shadow-blue-600/30">
+                <i class="fa-solid fa-file-pdf text-base"></i>
+                <span>Сохранить в PDF / Печать</span>
+            </button>
+            <a href="https://github.com/tolmas07" target="_blank" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium px-4 py-2 rounded-lg text-sm flex items-center gap-2 transition">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Проекты</span>
+            </a>
+            <a href="https://tolmas07.github.io/" target="_blank" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium px-4 py-2 rounded-lg text-sm flex items-center gap-2 transition">
+                <i class="fa-solid fa-globe"></i>
+                <span>Веб-Портфолио</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main CV Document Body -->
+    <main class="max-w-4xl mx-auto bg-slate-950 print:bg-white border border-slate-800 print:border-none print:text-slate-900 rounded-2xl shadow-2xl overflow-hidden">
+        
+        <!-- Header Banner Section -->
+        <header class="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 print:from-slate-100 print:to-slate-100 p-8 sm:p-10 border-b border-slate-800 print:border-slate-200">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white print:text-slate-900 tracking-tight">
+                        Толмасбек Муртазоев
+                    </h1>
+                    <p class="text-base sm:text-lg text-blue-400 print:text-blue-700 font-semibold mt-1">
+                        Инженер по электронным системам | Frontend & Full-Stack Developer | AI Vibe Coder
+                    </p>
+                    <p class="text-slate-300 print:text-slate-600 text-xs sm:text-sm mt-2 max-w-2xl leading-relaxed">
+                        Мультидисциплинарный IT-специалист с высшим инженерным образованием (БГУИР, Минск & ТАТУ, Ташкент). Обладаю коммерческим опытом разработка Frontend/Full-Stack систем (в т.ч. в компании «Автобус1»), опытом мобильного программирования, навыками работы с физической электроникой и современным подходом **AI & Vibe Coding**.
+                    </p>
+                </div>
+                
+                <!-- Quick Contact Badge Box -->
+                <div class="flex flex-col gap-2.5 text-xs text-slate-300 print:text-slate-700 bg-slate-900/90 print:bg-slate-50 border border-slate-800 print:border-slate-200 p-4 rounded-xl min-w-[240px] shrink-0">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-location-dot text-blue-400 print:text-blue-600 w-4"></i>
+                        <span>Минск / Ташкент (Релокация/Удаленка)</span>
+                    </div>
+                    <a href="https://github.com/tolmas07" target="_blank" class="flex items-center gap-2.5 hover:text-blue-400 transition font-medium">
+                        <i class="fa-brands fa-github text-blue-400 print:text-blue-600 w-4"></i>
+                        <span class="underline underline-offset-2">github.com/tolmas07</span>
+                    </a>
+                    <a href="https://tolmas07.github.io/" target="_blank" class="flex items-center gap-2.5 hover:text-blue-400 transition">
+                        <i class="fa-solid fa-globe text-blue-400 print:text-blue-600 w-4"></i>
+                        <span class="underline underline-offset-2">tolmas07.github.io</span>
+                    </a>
+                    <a href="https://kwork.ru/user/tolmas" target="_blank" class="flex items-center gap-2.5 hover:text-blue-400 transition">
+                        <i class="fa-solid fa-briefcase text-blue-400 print:text-blue-600 w-4"></i>
+                        <span class="underline underline-offset-2">kwork.ru/user/tolmas</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- GitHub Portfolio Highlight Banner -->
+        <div class="bg-blue-950/40 print:bg-slate-100 border-b border-blue-900/40 print:border-slate-200 px-8 py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2.5 text-slate-200 print:text-slate-800">
+                <i class="fa-brands fa-github text-blue-400 print:text-blue-700 text-base"></i>
+                <span><strong>Репозитории и исходный код:</strong> С исходными кодами моих проектов и лабораторных работ можно ознакомиться на GitHub:</span>
+            </div>
+            <a href="https://github.com/tolmas07" target="_blank" class="bg-blue-600 hover:bg-blue-500 print:bg-blue-700 text-white font-semibold px-3 py-1 rounded text-xs transition flex items-center gap-1.5 shrink-0">
+                <span>github.com/tolmas07</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 p-8 sm:p-10 gap-8">
+            
+            <!-- Left Column: Education, Electronics, AI & Skills (5 Cols) -->
+            <aside class="md:col-span-5 space-y-7 print:space-y-5">
+                
+                <!-- Education Section (BSUIR & TUIT) -->
+                <div class="page-break-inside-avoid">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i> Высшее Образование
+                    </h3>
+                    <div class="space-y-3">
+                        <!-- BSUIR Belarus -->
+                        <div class="bg-slate-900/80 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-sm text-slate-100 print:text-slate-900">БГУИР</h4>
+                                <span class="text-[10px] bg-blue-900/60 text-blue-300 print:bg-blue-100 print:text-blue-800 px-2 py-0.5 rounded font-semibold">Беларусь, Минск</span>
+                            </div>
+                            <p class="text-xs text-blue-400 print:text-blue-700 font-medium mt-1">Квалификация: Инженер по электронным системам</p>
+                            <p class="text-[11px] text-slate-400 print:text-slate-600 mt-1">
+                                ФКП, каф. ПИКС. <br>
+                                <strong class="text-slate-300 print:text-slate-700">Специальность:</strong> Программируемые мобильные системы (Мобильное программирование).
+                            </p>
+                        </div>
+
+                        <!-- TUIT Tashkent -->
+                        <div class="bg-slate-900/80 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-sm text-slate-100 print:text-slate-900">ТАТУ (TUIT)</h4>
+                                <span class="text-[10px] bg-emerald-900/60 text-emerald-300 print:bg-emerald-100 print:text-emerald-800 px-2 py-0.5 rounded font-semibold">Узбекистан, Ташкент</span>
+                            </div>
+                            <p class="text-xs text-emerald-400 print:text-emerald-700 font-medium mt-1">Ташкентский университет информационных технологий</p>
+                            <p class="text-[11px] text-slate-400 print:text-slate-600 mt-1">
+                                Окончил факультет Компьютерного инжиниринга (Электронные системы и мобильные технологии).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical Electronics & Hardware Section -->
+                <div class="page-break-inside-avoid">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-amber-400 print:text-amber-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-microchip"></i> Физическая Электроника & Hardware
+                    </h3>
+                    <div class="bg-slate-900/80 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200">
+                        <ul class="text-xs text-slate-300 print:text-slate-700 space-y-1.5 list-disc list-inside">
+                            <li><strong>Сборка и ремонт плат:</strong> Трассировка, монтаж и пайка компонентов (SMD/DIP), Диагностика и ремонт радиоэлектронных плат.</li>
+                            <li><strong>Робототехника & Модули:</strong> Сборка автономных роботов, подключение и калибровка сенсоров, датчиков и сервоприводов.</li>
+                            <li><strong>Микроконтроллеры:</strong> Arduino, ESP32, STM32 (C/C++), интеграция физических устройств с веб-клиентами через WebSockets и REST.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AI & Vibe Coding Section -->
+                <div class="page-break-inside-avoid">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-purple-400 print:text-purple-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI & Vibe Coding (ИИ-Разработка)
+                    </h3>
+                    <div class="bg-slate-900/80 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200">
+                        <div class="flex flex-wrap gap-1.5 mb-2">
+                            <span class="bg-purple-950/80 print:bg-purple-100 text-purple-300 print:text-purple-800 text-[11px] px-2 py-0.5 rounded font-medium border border-purple-800/40 print:border-purple-200">Vibe Coding</span>
+                            <span class="bg-purple-950/80 print:bg-purple-100 text-purple-300 print:text-purple-800 text-[11px] px-2 py-0.5 rounded font-medium border border-purple-800/40 print:border-purple-200">Cursor / Copilot</span>
+                            <span class="bg-purple-950/80 print:bg-purple-100 text-purple-300 print:text-purple-800 text-[11px] px-2 py-0.5 rounded font-medium border border-purple-800/40 print:border-purple-200">LLM APIs (Claude, GPT, Gemini)</span>
+                        </div>
+                        <p class="text-[11px] text-slate-400 print:text-slate-600">
+                            Профессиональное использование AI-ассистентов для ускорения цикла разработки в 3-4 раза, генерации чистой архитектуры, автоматического проведения рефакторинга и генерации тестов.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack & Software Skills -->
+                <div class="page-break-inside-avoid">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-code"></i> Программный стек
+                    </h3>
+                    
+                    <div class="space-y-2.5">
+                        <div>
+                            <span class="text-[11px] font-semibold text-slate-400 print:text-slate-500 block mb-1">Frontend & Mobile</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">JavaScript / TS</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">React / React Native</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">Vue.js / Redux</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">Tailwind CSS / HTML5</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-[11px] font-semibold text-slate-400 print:text-slate-500 block mb-1">Backend & Tools</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">Node.js / Express</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">REST API / WebSockets</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">PostgreSQL / MongoDB</span>
+                                <span class="bg-slate-800 print:bg-slate-100 text-slate-200 print:text-slate-800 text-[11px] px-2 py-0.5 rounded border border-slate-700 print:border-slate-300">Figma / Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="page-break-inside-avoid">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-700 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-language"></i> Языки
+                    </h3>
+                    <div class="text-xs space-y-1 text-slate-300 print:text-slate-700">
+                        <p class="flex justify-between"><span>Русский:</span> <span class="text-slate-400 print:text-slate-600">Родной</span></p>
+                        <p class="flex justify-between"><span>Узбекский:</span> <span class="text-slate-400 print:text-slate-600">Родной</span></p>
+                        <p class="flex justify-between"><span>Английский:</span> <span class="text-slate-400 print:text-slate-600">B1–B2 (Технический)</span></p>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- Right Column: Experience, Awards & Portfolio Projects (7 Cols) -->
+            <section class="md:col-span-7 space-y-7">
+                
+                <!-- Experience Section -->
+                <div>
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-700 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase"></i> Опыт работы
+                    </h3>
+
+                    <div class="relative border-l-2 border-slate-800 print:border-slate-300 pl-4 space-y-6">
+                        
+                        <!-- Experience 1: Avtobus1 Екатеринбург -->
+                        <div class="relative page-break-inside-avoid">
+                            <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 border-4 border-slate-950 print:border-white"></div>
+                            
+                            <div class="flex flex-wrap justify-between items-baseline">
+                                <h4 class="font-bold text-base text-white print:text-slate-900">Frontend Developer</h4>
+                                <span class="text-xs font-semibold text-blue-400 print:text-blue-700 bg-blue-950/60 print:bg-blue-100 px-2 py-0.5 rounded">1 год</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400 print:text-slate-600 font-medium mb-2">
+                                <span>«Автобус1» (г. Екатеринбург)</span>
+                                <span>•</span>
+                                <a href="https://avtobus1.ru" target="_blank" class="text-blue-400 hover:underline">avtobus1.ru</a>
+                            </div>
+                            
+                            <ul class="text-xs text-slate-300 print:text-slate-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                <li><strong>Разработка пользовательских интерфейсов:</strong> Создание и поддержка веб-клиентов и личных кабинетов для федеральной транспортной компании.</li>
+                                <li><strong>Оптимизация и стек:</strong> Работа с React, TypeScript, Redux, оптимизация скорости загрузки страниц и отзывчивости UI/UX.</li>
+                                <li><strong>Интеграция сервисов:</strong> Связка фронтенд-модулей с внутренними микросервисами и REST API логистики.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 2: Freelance / Full-Stack & Hardware -->
+                        <div class="relative page-break-inside-avoid">
+                            <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 border-4 border-slate-950 print:border-white"></div>
+                            
+                            <div class="flex flex-wrap justify-between items-baseline">
+                                <h4 class="font-bold text-base text-white print:text-slate-900">Full-Stack & Hardware Systems Developer</h4>
+                                <span class="text-xs font-semibold text-blue-400 print:text-blue-700 bg-blue-950/60 print:bg-blue-100 px-2 py-0.5 rounded">2020 — н.в. (3+ года)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 print:text-slate-600 font-medium mb-2">Фриланс / Проектная разработка (Kwork & Зарубежные клиенты)</p>
+                            
+                            <ul class="text-xs text-slate-300 print:text-slate-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                <li><strong>Веб & Мобильная разработка:</strong> Проектирование и релиз веб-платформ (React, Vue.js, Node.js, TypeScript).</li>
+                                <li><strong>AI & Vibe Coding Workflow:</strong> Ускоренное прототипирование продуктов с помощью инструментов Cursor, Copilot и LLM.</li>
+                                <li><strong>Hardware & IoT:</strong> Разработка программно-аппаратных комплексов, настройка микроконтроллеров, сборка и пайка плат, проектирование робототехники.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards Section -->
+                <div class="page-break-inside-avoid bg-blue-950/30 print:bg-blue-50 border border-blue-800/40 print:border-blue-200 p-4 rounded-xl">
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-800 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-award"></i> Награды и Достижения
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 print:text-slate-700">
+                        <div>
+                            <strong class="text-white print:text-slate-900 block font-semibold">Awwwards — Site of the Day</strong>
+                            <span class="text-slate-400 print:text-slate-600 text-[11px]">Nova Stream • Интерактивный UI/UX</span>
+                        </div>
+                        <div>
+                            <strong class="text-white print:text-slate-900 block font-semibold">Design Excellence Award</strong>
+                            <span class="text-slate-400 print:text-slate-600 text-[11px]">EcoSphere Global • Ребрендинг & Веб</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Portfolio Cases -->
+                <div>
+                    <h3 class="text-xs uppercase tracking-wider font-bold text-blue-400 print:text-blue-700 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i> Избранные проекты (Портфолио)
+                    </h3>
+
+                    <div class="space-y-3.5">
+                        <!-- Project 1 -->
+                        <div class="bg-slate-900/60 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200 card-hover page-break-inside-avoid">
+                            <div class="flex justify-between items-start mb-1.5">
+                                <div>
+                                    <h4 class="font-bold text-sm text-white print:text-slate-900 flex items-center gap-2">
+                                        Nova Stream
+                                        <span class="text-[10px] bg-amber-500/20 text-amber-300 print:bg-amber-100 print:text-amber-800 px-2 py-0.5 rounded-full font-semibold">Awwwards Awarded</span>
+                                    </h4>
+                                    <p class="text-[11px] text-slate-400 print:text-slate-600">Мультимедийная интерактивная веб-платформа</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 print:text-slate-700 mb-2 leading-relaxed">
+                                Высокопроизводительный сервис с фокусом на плавные анимации и высокую скорость работы.
+                            </p>
+                            <div class="flex flex-wrap gap-1 text-[11px] text-blue-400 print:text-blue-700 font-mono">
+                                <span>React</span> • <span>TypeScript</span> • <span>Tailwind CSS</span> • <span>Framer Motion</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-slate-900/60 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200 card-hover page-break-inside-avoid">
+                            <div class="flex justify-between items-start mb-1.5">
+                                <div>
+                                    <h4 class="font-bold text-sm text-white print:text-slate-900 flex items-center gap-2">
+                                        Smart Hardware & Robotics Hub
+                                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 print:bg-emerald-100 print:text-emerald-800 px-2 py-0.5 rounded-full font-semibold">Hardware + IoT</span>
+                                    </h4>
+                                    <p class="text-[11px] text-slate-400 print:text-slate-600">Программно-аппаратный комплекс & Робототехника</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 print:text-slate-700 mb-2 leading-relaxed">
+                                Сборка автономных робототехнических платформ, проектирование и пайка плат, сопряжение микроконтроллеров с веб-интерфейсом управления.
+                            </p>
+                            <div class="flex flex-wrap gap-1 text-[11px] text-amber-400 print:text-amber-700 font-mono">
+                                <span>ESP32 / Arduino</span> • <span>C/C++</span> • <span>PCB Soldering</span> • <span>WebSockets</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: GitHub Banner -->
+                        <div class="bg-slate-900/60 print:bg-slate-50 p-3.5 rounded-xl border border-slate-800 print:border-slate-200 card-hover page-break-inside-avoid">
+                            <div class="flex justify-between items-start mb-1.5">
+                                <div>
+                                    <h4 class="font-bold text-sm text-white print:text-slate-900 flex items-center gap-2">
+                                        Все репозитории & Код на GitHub
+                                        <i class="fa-brands fa-github text-blue-400"></i>
+                                    </h4>
+                                    <p class="text-[11px] text-slate-400 print:text-slate-600">Лабораторные, коммерческие и пет-проекты</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 print:text-slate-700 mb-2 leading-relaxed">
+                                Полный список исходных кодов, учебных и практических разработок доступен в моем открытом профиле.
+                            </p>
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div class="flex flex-wrap gap-1 text-[11px] text-blue-400 print:text-blue-700 font-mono">
+                                    <span>GitHub</span> • <span>Open Source</span> • <span>Code Examples</span>
+                                </div>
+                                <a href="https://github.com/tolmas07" target="_blank" class="text-xs text-blue-400 print:text-blue-600 hover:underline flex items-center gap-1 font-medium">
+                                    github.com/tolmas07 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- Footer Bar -->
+        <footer class="bg-slate-900/90 print:bg-slate-100 px-8 py-4 border-t border-slate-800 print:border-slate-200 text-center text-xs text-slate-500 print:text-slate-600">
+            <p>© 2026 Толмасбек Муртазоев • Инженер по электронным системам | Frontend, Full-Stack & AI Developer</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

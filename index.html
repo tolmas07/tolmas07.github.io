@@ -23,12 +23,67 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Толмас Муртазоев | Portfolio">
-    <meta name="twitter:description" content="Full-Stack Разработчик & UI Дизайнер">
+    <meta name="twitter:description" content="Full-Stack Разработчик & UI Дизайнер. React, TypeScript, Vue.js, AI Vibe Coder.">
+    <meta name="twitter:image" content="https://tolmas07.github.io/images/og-image.jpg">
     <meta name="yandex-verification" content="276cc79b5246dd44" />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.telegram.org">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Толмас Муртазоев",
+        "alternateName": "Tolmasbek Murtazoev",
+        "jobTitle": ["Full-Stack Developer", "UI/UX Designer", "AI Vibe Coder"],
+        "description": "Full-Stack Разработчик и UI Дизайнер. Создаю цифровые продукты с чистым кодом и продуманным дизайном.",
+        "url": "https://tolmas07.github.io/",
+        "image": "https://tolmas07.github.io/images/og-image.jpg",
+        "email": "tolmasofficial@gmail.com",
+        "sameAs": [
+            "https://github.com/tolmas07",
+            "https://www.instagram.com/tolmas_prvt/",
+            "https://t.me/tolmas_prvt",
+            "https://kwork.ru/user/tolmas"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Минск",
+            "addressCountry": "BY"
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "БГУИР — Белорусский государственный университет информатики и радиоэлектроники"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "ТАТУ — Ташкентский университет информационных технологий"
+            }
+        ],
+        "knowsAbout": [
+            "JavaScript", "TypeScript", "React", "Vue.js", "Node.js",
+            "UI/UX Design", "Figma", "AI Vibe Coding", "Full-Stack Development",
+            "Tailwind CSS", "HTML5", "CSS3", "PostgreSQL", "MongoDB"
+        ],
+        "award": [
+            "Awwwards — Site of the Day (Nova Stream)",
+            "Design Excellence Award (EcoSphere Global)"
+        ]
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="canonical" href="https://tolmas07.github.io/" />
     <link rel="icon" type="image/svg+xml" href="images/portrait.svg">
-    <title>Толмас Муртазоев | Portfolio</title>
+    <title>Толмас Муртазоев | Full-Stack Developer & UI Designer — Портфолио</title>
     <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +103,7 @@
             <ul>
                 <li><a href="#section2" data-i18n="nav-exp">Опыт</a></li>
                 <li><a href="#achievements" data-i18n="nav-achieve">Достижения</a></li>
-                <li><a href="#portfolio" data-i18n="nav-projects">Проекты</a></li>
+                <li><a href="#cv" data-i18n="nav-cv">CV</a></li>
                 <li><a href="#contact" class="nav-contact" data-i18n="nav-contact">Написать мне</a></li>
                 <li><button id="langToggle" class="lang-btn">EN</button></li>
             </ul>
@@ -130,33 +185,76 @@
                             <span class="stat-label" data-i18n="skills-mastery">Общее мастерство</span>
                         </div>
                         <div class="chart-bars">
-                            <div class="bar-col">
-                                <span class="bar-percent">90%</span>
-                                <div class="bar" style="height: 90%;"></div><span class="label">HTML</span>
+                            <div class="chart-bars-inner">
+                                <div class="bar-col">
+                                    <span class="bar-percent">90%</span>
+                                    <div class="bar" style="height: 90%;"></div><span class="label">HTML</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">90%</span>
+                                    <div class="bar" style="height: 90%;"></div><span class="label">CSS</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">80%</span>
+                                    <div class="bar" style="height: 80%;"></div><span class="label">JS</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">75%</span>
+                                    <div class="bar" style="height: 75%;"></div><span class="label">TS</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">80%</span>
+                                    <div class="bar" style="height: 80%;"></div><span class="label">React</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">80%</span>
+                                    <div class="bar" style="height: 80%;"></div><span class="label">Node</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">70%</span>
+                                    <div class="bar" style="height: 72%;"></div><span class="label">Vue</span>
+                                </div>
                             </div>
-                            <div class="bar-col">
-                                <span class="bar-percent">90%</span>
-                                <div class="bar" style="height: 90%;"></div><span class="label">CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Vibe Coding Card -->
+                    <div class="skill-card">
+                        <div class="card-header">
+                            <div>
+                                <h3 data-i18n="skills-ai-title">AI & Vibe Coding</h3>
+                                <span class="subtitle" data-i18n="skills-ai-subtitle">ИИ-инструменты и автоматизация</span>
                             </div>
-                            <div class="bar-col">
-                                <span class="bar-percent">80%</span>
-                                <div class="bar" style="height: 80%;"></div><span class="label">JS</span>
+                            <div class="badge status-up" data-i18n="skills-ai-trend">
+                                <span class="material-symbols-outlined">trending_up</span> растущий спрос
                             </div>
-                             <div class="bar-col">
-                                <span class="bar-percent">75%</span>
-                                <div class="bar" style="height: 75%;"></div><span class="label">TS</span>
-                            </div>
-                            <div class="bar-col">
-                                <span class="bar-percent">80%</span>
-                                <div class="bar" style="height: 80%;"></div><span class="label">React</span>
-                            </div>
-                            <div class="bar-col">
-                                <span class="bar-percent">80%</span>
-                                <div class="bar" style="height: 80%;"></div><span class="label">Node</span>
-                            </div>
-                            <div class="bar-col">
-                                <span class="bar-percent">70%</span>
-                                <div class="bar" style="height: 72%;"></div><span class="label">Vue</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-value">75%</span>
+                            <span class="stat-label" data-i18n="skills-ai-mastery">Общее мастерство</span>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="chart-bars-inner">
+                                <div class="bar-col">
+                                    <span class="bar-percent">80%</span>
+                                    <div class="bar" style="height: 80%;"></div><span class="label">Claude</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">75%</span>
+                                    <div class="bar" style="height: 75%;"></div><span class="label">Copilot</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">70%</span>
+                                    <div class="bar" style="height: 70%;"></div><span class="label">Cursor</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">75%</span>
+                                    <div class="bar" style="height: 75%;"></div><span class="label">ChatGPT</span>
+                                </div>
+                                <div class="bar-col">
+                                    <span class="bar-percent">65%</span>
+                                    <div class="bar" style="height: 65%;"></div><span class="label">Midjourney</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -412,114 +510,32 @@
         </section>
 
 
-        <!-- Section 4: Portfolio -->
-        <section id="portfolio" class="portfolio-section">
+        <!-- Section: CV Download -->
+        <section id="cv" class="cv-section">
             <div class="container">
-                <div class="portfolio-header reveal">
-                    <span class="portfolio-tag" data-i18n="port-tag">Мои последние работы</span>
-                    <div class="flex-row">
-                        <h2 data-i18n="port-title">Создаю цифровой <span class="red-text">опыт</span> и визуальную
-                            идентичность.</h2>
+                <div class="cv-card reveal">
+                    <div class="cv-card-inner">
+                        <div class="cv-icon-box">
+                            <span class="material-symbols-outlined">description</span>
+                        </div>
+                        <h2 data-i18n="cv-title">Скачать моё CV</h2>
+                        <p data-i18n="cv-desc">Полное резюме с подробным описанием опыта, образования, навыков и проектов.</p>
+                        <div class="cv-buttons">
+                            <a href="CV.html" class="cv-btn cv-btn-primary" download="Tolmasbek_Murtazoev_CV.html">
+                                <span class="material-symbols-outlined">download</span>
+                                <span data-i18n="cv-download">Скачать CV</span>
+                            </a>
+                            <a href="CV.html" class="cv-btn cv-btn-outline" target="_blank" rel="noopener noreferrer">
+                                <span class="material-symbols-outlined">open_in_new</span>
+                                <span data-i18n="cv-view">Открыть в браузере</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Admin Toolbar (hidden by default) -->
-                <div id="adminToolbar" class="admin-toolbar" style="display:none;">
-                    <span class="admin-badge" data-i18n="admin-mode"><span
-                            class="material-symbols-outlined">shield_person</span> Режим
-                        администратора</span>
-                    <div class="admin-actions">
-                        <button id="addProjectBtn" class="admin-btn add" data-i18n="admin-add"><span
-                                class="material-symbols-outlined">add</span> Добавить проект</button>
-                        <button id="logoutBtn" class="admin-btn logout" data-i18n="admin-logout"><span
-                                class="material-symbols-outlined">logout</span> Выйти</button>
-                    </div>
-                </div>
-
-                <div class="filter-tabs reveal">
-                    <a href="#" class="filter-tab active" data-category="all" data-i18n="filter-all">Все проекты</a>
-                    <a href="#" class="filter-tab" data-category="web" data-i18n="filter-web">Веб-разработка</a>
-                    <a href="#" class="filter-tab" data-category="design" data-i18n="filter-design">UI/UX Дизайн</a>
-                    <a href="#" class="filter-tab" data-category="branding" data-i18n="filter-branding">Брендинг</a>
-                    <a href="#" class="filter-tab" data-category="ecommerce" data-i18n="filter-ecomm">E-Commerce</a>
-                    <a href="#" class="filter-tab" data-category="graphic" data-i18n="filter-graphic">Графика</a>
-                </div>
-
-                <div class="portfolio-grid" id="portfolioGrid">
-                    <!-- Projects rendered by JS -->
                 </div>
             </div>
         </section>
 
-
-
-        <!-- Admin Login Modal -->
-        <div id="adminLoginModal" class="modal-overlay" style="display:none;">
-            <div class="modal-card modal-small">
-                <button class="modal-close" onclick="closeModal('adminLoginModal')">&times;</button>
-                <div class="modal-icon"><span class="material-symbols-outlined">lock</span></div>
-                <h3 data-i18n="admin-login-title">Вход для администратора</h3>
-                <p data-i18n="admin-login-desc">Введите пароль для доступа к управлению портфолио.</p>
-                <input type="password" id="adminPassword" placeholder="Пароль" class="modal-input"
-                    data-i18n-placeholder="admin-pwd">
-                <div id="loginError" class="form-status error" style="display:none;" data-i18n="admin-login-err">
-                    Неверный пароль</div>
-                <button id="loginSubmitBtn" class="submit-btn" style="margin-top:15px;" data-i18n="admin-login-btn">
-                    Войти <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Project Editor Modal -->
-        <div id="projectEditorModal" class="modal-overlay" style="display:none;">
-            <div class="modal-card">
-                <button class="modal-close" onclick="closeModal('projectEditorModal')">&times;</button>
-                <h3 id="editorTitle" data-i18n="modal-add-title">Добавить проект</h3>
-                <form id="projectForm" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label data-i18n="modal-name">Название проекта</label>
-                            <input type="text" id="projTitle" placeholder="Финтех Аналитика" required
-                                data-i18n-placeholder="modal-proj-name">
-                        </div>
-                        <div class="form-group">
-                            <label data-i18n="modal-cat">Категория</label>
-                            <div class="checkbox-group" id="projCategory">
-                                <label class="checkbox-label"><input type="checkbox" value="web"> <span
-                                        data-i18n="modal-cat-web">Веб-разработка</span></label>
-                                <label class="checkbox-label"><input type="checkbox" value="design"> <span
-                                        data-i18n="modal-cat-design">UI/UX Дизайн</span></label>
-                                <label class="checkbox-label"><input type="checkbox" value="branding"> <span
-                                        data-i18n="modal-cat-brand">Брендинг</span></label>
-                                <label class="checkbox-label"><input type="checkbox" value="ecommerce">
-                                    <span data-i18n="modal-cat-ecomm">E-Commerce</span></label>
-                                <label class="checkbox-label"><input type="checkbox" value="graphic"> <span
-                                        data-i18n="modal-cat-graph">Графический
-                                        дизайн</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Ссылка на изображения (URL, через запятую)</label>
-                        <textarea rows="3" id="projImage"
-                            placeholder="https://example.com/img1.jpg, https://example.com/img2.jpg"
-                            required></textarea>
-                    </div>
-                    <div class="form-group" style="grid-column: span 2;">
-                        <label>Текст категории (карточка)</label>
-                        <input type="text" id="projCategoryLabel" placeholder="Веб-приложение">
-                    </div>
-            </div>
-            <input type="hidden" id="projEditId" value="">
-            <button type="submit" class="submit-btn">
-                Сохранить <span class="material-symbols-outlined">save</span>
-            </button>
-            </form>
-        </div>
-        </div>
-
-
-        <!-- Section 5: Contact -->
+        <!-- Section 4: Contact -->
         <section id="contact" class="contact-section">
             <div class="container">
                 <div class="contact-left reveal-left">
@@ -784,249 +800,69 @@
             setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
         }
 
-        // ===== Firebase Sync =====
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+    </script>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyB3o3l_ylhOYNaCkjh3bzbeM5OyF3Sd-Cg",
-            authDomain: "portfolio-db-10dc7.firebaseapp.com",
-            databaseURL: "https://portfolio-db-10dc7-default-rtdb.firebaseio.com",
-            projectId: "portfolio-db-10dc7",
-            storageBucket: "portfolio-db-10dc7.firebasestorage.app",
-            messagingSenderId: "978421850406",
-            appId: "1:978421850406:web:e68a87656b72c6e39021e7",
-            measurementId: "G-5350ZDGWD9"
-        };
+    <!-- ═══════════════ SECURITY LAYER ═══════════════ -->
+    <script>
+    (function() {
+        'use strict';
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        const projectsRef = ref(db, 'projects');
+        // 1. Console Warning
+        console.log('%c⚠️ STOP', 'color: #ff4444; font-size: 48px; font-weight: bold;');
+        console.log('%cЭто консоль разработчика. Если кто-то просил вас вставить сюда код — это мошенничество.', 'color: #ff4444; font-size: 16px;');
+        console.log('%c© Толмас Муртазоев — tolmas07.github.io', 'color: #888; font-size: 12px;');
 
-        let currentFilter = 'all';
-        let isAdmin = sessionStorage.getItem('isAdmin') === 'true';
-        let allProjects = [];
-
-        function renderPortfolio() {
-            const grid = document.getElementById('portfolioGrid');
-            const filtered = currentFilter === 'all'
-                ? allProjects
-                : allProjects.filter(p => p.categories?.includes(currentFilter));
-
-            grid.innerHTML = filtered.map(p => {
-                const catStr = p.categories ? p.categories.join(',') : (p.category || '');
-                const images = Array.isArray(p.image) ? p.image : (p.image ? [p.image] : []);
-
-                const imageElements = images.length > 0
-                    ? images.map((imgUrl, index) => {
-                        const zIndex = images.length - index;
-                        return `<div class="book-page" style="background-image: url('${imgUrl}'); z-index: ${zIndex};"></div>`;
-                    }).join('')
-                    : `<div class="book-page" style="background-color: #2a2a2a; z-index: 1;"></div>`;
-
-                return `
-                <div class="new-project-card" data-category="${catStr}" onclick="this.classList.toggle('flipped-card')">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="project-slider">${imageElements}</div>
-                        </div>
-                        <div class="card-back">
-                            <div class="project-content">
-                                ${isAdmin ? `
-                                <div class="admin-card-controls" style="pointer-events: auto;">
-                                    <button class="card-ctrl-btn edit" onclick="event.stopPropagation(); editProject('${p.id}')" title="Редактировать"><span class="material-symbols-outlined">edit</span></button>
-                                    <button class="card-ctrl-btn delete" onclick="event.stopPropagation(); deleteProject('${p.id}')" title="Удалить"><span class="material-symbols-outlined">delete</span></button>
-                                </div>` : ''}
-                                <div class="project-text">
-                                    <span class="p-category">${p.categoryLabel || ''}</span>
-                                    <h3 class="p-title">${p.title}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-            }).join('');
-
-            initSlideshows();
-        }
-
-        // Slideshow — book page flip effect
-        function initSlideshows() {
-            const cards = document.querySelectorAll('.new-project-card');
-            const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-
-            if (isTouchDevice) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        entry.isIntersecting ? startSlideshow(entry.target) : stopSlideshow(entry.target);
-                    });
-                }, { threshold: 0.6 });
-                cards.forEach(card => observer.observe(card));
-            } else {
-                cards.forEach(card => {
-                    card.addEventListener('mouseenter', () => startSlideshow(card));
-                    card.addEventListener('mouseleave', () => stopSlideshow(card));
-                });
-            }
-
-            function startSlideshow(card) {
-                if (card.dataset.slideInterval) return;
-                const pages = card.querySelectorAll('.book-page');
-                if (pages.length <= 1) return;
-
-                let currentPage = 0;
-                card.dataset.slideInterval = setInterval(() => {
-                    if (card.classList.contains('flipped-card')) return;
-                    pages[currentPage].classList.add('flipped');
-                    currentPage++;
-
-                    if (currentPage >= pages.length - 1) {
-                        setTimeout(() => {
-                            if (!card.classList.contains('flipped-card')) {
-                                pages.forEach(p => p.classList.remove('flipped'));
-                                currentPage = 0;
-                            }
-                        }, 1500);
-                    }
-                }, 1500);
-            }
-
-            function stopSlideshow(card) {
-                clearInterval(card.dataset.slideInterval);
-                delete card.dataset.slideInterval;
-                card.querySelectorAll('.book-page').forEach(p => p.classList.remove('flipped'));
-            }
-        }
-
-        // ===== Firebase Realtime Listeners =====
-        onValue(projectsRef, (snapshot) => {
-            allProjects = snapshot.val() ? Object.values(snapshot.val()) : [];
-            renderPortfolio();
-        });
-
-        async function saveToFirebase(project) {
-            await set(ref(db, 'projects/' + project.id), project);
-        }
-
-        // Удаление из Firebase
-        async function deleteFromFirebase(id) {
-            await set(ref(db, 'projects/' + id), null);
-        }
-
-        window.editProject = (id) => {
-            const project = allProjects.find(p => p.id === id);
-            if (!project) return;
-            document.getElementById('editorTitle').textContent = 'Редактировать проект';
-            document.getElementById('projEditId').value = project.id;
-            document.getElementById('projTitle').value = project.title;
-
-            document.querySelectorAll('#projCategory input[type="checkbox"]').forEach(cb => {
-                cb.checked = project.categories ? project.categories.includes(cb.value) : (project.category === cb.value);
-            });
-
-            document.getElementById('projCategoryLabel').value = project.categoryLabel || '';
-            document.getElementById('projImage').value = Array.isArray(project.image) ? project.image.join(', ') : (project.image || '');
-            document.getElementById('projectEditorModal').style.display = 'flex';
-        };
-
-        window.deleteProject = async (id) => {
-            if (confirm('Удалить этот проект навсегда из базы?')) {
-                await deleteFromFirebase(id);
-            }
-        };
-
-        window.closeModal = (id) => {
-            document.getElementById(id).style.display = 'none';
-        };
-
-        // Filters
-        document.querySelectorAll('.filter-tab').forEach(tab => {
-            tab.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter = this.dataset.category;
-                renderPortfolio();
-            });
-        });
-
-        // Admin login shortcut (Ctrl+Shift+Y)
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && e.shiftKey && (e.key === 'Y' || e.key === 'y' || e.key === 'Н' || e.key === 'н')) {
-                e.preventDefault();
-                if (isAdmin) return;
-                document.getElementById('adminLoginModal').style.display = 'flex';
-                document.getElementById('adminPassword').focus();
-            }
-        });
-
-        document.getElementById('loginSubmitBtn').addEventListener('click', async function () {
-            const pwd = document.getElementById('adminPassword').value;
-            const msgBuffer = new TextEncoder().encode(pwd);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            const TARGET_HASH = "38ca06a931651c283fb472c1693f8560ddc33c14f4b22cea34f6528199a1cdd1";
-
-            if (hashHex === TARGET_HASH) {
-                isAdmin = true;
-                sessionStorage.setItem('isAdmin', 'true');
-                window.closeModal('adminLoginModal');
-                document.getElementById('adminToolbar').style.display = 'flex';
-                document.getElementById('adminPassword').value = '';
-                document.getElementById('loginError').style.display = 'none';
-                renderPortfolio();
-            } else {
-                document.getElementById('loginError').style.display = 'block';
-            }
-        });
-
-        document.getElementById('logoutBtn').addEventListener('click', function () {
-            isAdmin = false;
-            sessionStorage.removeItem('isAdmin');
-            document.getElementById('adminToolbar').style.display = 'none';
-            renderPortfolio();
-        });
-
-        document.getElementById('addProjectBtn').addEventListener('click', function () {
-            document.getElementById('editorTitle').textContent = 'Добавить проект';
-            document.getElementById('projectForm').reset();
-            const checkboxes = document.querySelectorAll('#projCategory input[type="checkbox"]');
-            checkboxes.forEach(cb => cb.checked = false);
-            document.getElementById('projEditId').value = '';
-            document.getElementById('projectEditorModal').style.display = 'flex';
-        });
-
-        document.getElementById('projectForm').addEventListener('submit', async function (e) {
+        // 2. Disable Right-Click
+        document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-            const editId = document.getElementById('projEditId').value;
-
-            const selectedCategories = [];
-            document.querySelectorAll('#projCategory input[type="checkbox"]:checked').forEach(cb => selectedCategories.push(cb.value));
-
-            let displayLabel = document.getElementById('projCategoryLabel').value;
-            if (!displayLabel && selectedCategories.length > 0) {
-                const firstChecked = document.querySelector(`#projCategory input[value="${selectedCategories[0]}"]`);
-                displayLabel = firstChecked ? firstChecked.parentElement.textContent.trim() : '';
-            }
-
-            const imageArray = document.getElementById('projImage').value.split(',').map(u => u.trim()).filter(Boolean);
-
-            await saveToFirebase({
-                id: editId || 'p_' + Date.now(),
-                title: document.getElementById('projTitle').value,
-                categories: selectedCategories,
-                categoryLabel: displayLabel,
-                image: imageArray,
-                timestamp: Date.now()
-            });
-            window.closeModal('projectEditorModal');
+            return false;
         });
 
-        if (isAdmin) {
-            document.getElementById('adminToolbar').style.display = 'flex';
+        // 3. Disable Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) { e.preventDefault(); return false; }
+            // Ctrl+Shift+I / J / C
+            if (e.ctrlKey && e.shiftKey && [73, 74, 67, 105, 106, 99].indexOf(e.keyCode) !== -1) { e.preventDefault(); return false; }
+            // Ctrl+U (View Source)
+            if (e.ctrlKey && [85, 117].indexOf(e.keyCode) !== -1) { e.preventDefault(); return false; }
+            // Ctrl+S (Save)
+            if (e.ctrlKey && [83, 115].indexOf(e.keyCode) !== -1) { e.preventDefault(); return false; }
+        });
+
+        // 4. Disable Drag
+        document.addEventListener('dragstart', function(e) {
+            if (!e.target.closest('a')) { e.preventDefault(); return false; }
+        });
+
+        // 5. Anti-Iframe
+        if (window.self !== window.top) {
+            window.top.location = window.self.location;
         }
+
+        // 6. DevTools Detection
+        (function() {
+            var threshold = 160;
+            var open = false;
+            function check() {
+                var w = window.outerWidth - window.innerWidth > threshold;
+                var h = window.outerHeight - window.innerHeight > threshold;
+                if (w || h) {
+                    if (!open) {
+                        open = true;
+                        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0a0a0a;color:#888;font-family:Inter,system-ui,sans-serif;text-align:center;padding:2rem"><div><h1 style="color:#fa033a;font-size:2rem;margin-bottom:1rem">Доступ ограничен</h1><p>Закройте инструменты разработчика и обновите страницу.</p></div></div>';
+                    }
+                } else {
+                    if (open) location.reload();
+                    open = false;
+                }
+            }
+            setInterval(check, 1000);
+        })();
+
+        // 7. Debugger Trap
+        setInterval(function() { debugger; }, 3000);
+    })();
     </script>
 </body>
 
